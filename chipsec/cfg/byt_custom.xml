@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<configuration platform="BYT">
+<!-- XML configuration for Baytrail
+    Reference: Intel(R) Atom(TM) Processor E3800 Product Family Datasheet September 2014, Revision 3.5
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+
+  <!-- #################################### -->
+  <!--                                      -->
+  <!-- Configuration registers              -->
+  <!--                                      -->
+  <!-- #################################### -->
+  <registers>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- PCIe Configuration registers -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   
+    <!-- Graphics -->
+     
+    <!-- Section 14.9.17 -->
+    <register name="PAVPC" type="pcicfg" bus="0" dev="0x2" fun="0" offset="0x74" size="4" desc="PAVP Control">
+      <field name="PCME"      bit="0" size="1" desc="Protected Content Memory Enable"/>
+      <field name="PAVPE"     bit="1" size="1" desc="PAVP Enable"/>
+      <field name="PAVPC_LOCK" bit="2" size="1" desc="PAVP Lock"/>
+      <field name="HVYMODSEL" bit="3" size="1"/>
+      <field name="OVTATTACK" bit="4" size="1" desc="Override of Unsolicited Connection State Attack and Terminate"/>
+      <field name="WOPCMSZ"   bit="5" size="1"/>
+    </register>
+    
+    <!-- Section 22.3.25 -->
+    <register name="IADBGCTRL" type="pcicfg" bus="0" dev="0x1A" fun="0" offset="0xB0" desc="Debug Control">
+      <field name="IADBGCTRL_LOCK" bit="30" size="1"/>
+    </register>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- MMIO registers               -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <register name="PCBR" type="mmio" bar="GTTMMADR" offset="0x182120" desc="PCBR">
+      <field name="PCBR_LOCK" bit="0" size="1"/>
+    </register>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- CPU MSRs                     -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <register name="MSR_POWER_MISC"        type="msr" msr="0x120" desc="MISC" />
+    
+  </registers>
+
+</configuration>

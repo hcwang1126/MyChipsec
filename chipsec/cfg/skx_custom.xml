@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<configuration platform="SKX" >
+<!-- XML configuration file for Skylake/Purely Server
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+  
+  <pci>
+    <device name="_MISCCTRLSTS0_0.0.0" bus="0" dev="0x00" fun="0" vid="0x8086" />
+    <device name="_MISCCTRLSTS0_1.0.0" bus="1" dev="0x00" fun="0" vid="0x8086" />
+    <device name="_MISCCTRLSTS0_1.1.0" bus="1" dev="0x01" fun="0" vid="0x8086" />
+    <device name="_MISCCTRLSTS0_1.2.0" bus="1" dev="0x02" fun="0" vid="0x8086" />
+    <device name="_MISCCTRLSTS0_1.3.0" bus="1" dev="0x03" fun="0" vid="0x8086" />
+    <device name="_SMB_CMD_CFG" bus="1" dev="0x1E" fun="0" vid="0x8086" />
+    <device name="_CSR_DESIRED_CORES_CFG2" bus="1" dev="0x1E" fun="1" vid="0x8086" />
+  </pci>
+
+  <mmio>
+  </mmio>
+
+  <io>
+  </io>
+
+  <memory>
+  </memory>
+
+  <registers>
+
+    <!-- Host Controller -->
+    <register name="MISCCTRLSTS0_0.0.0" type="mmcfg" bus="0" dev="0" fun="0" offset="0x188" size="4" desc="MISC Control and Status Register 0">
+      <field name="inbound_configuration_enable" bit="1" size="1" desc="Enable Inbound Configuration Requests"/>
+    </register>
+    <register name="MISCCTRLSTS0_1.0.0" type="mmcfg" bus="1" dev="0" fun="0" offset="0x188" size="4" desc="MISC Control and Status Register 0">
+      <field name="inbound_configuration_enable" bit="1" size="1" desc="Enable Inbound Configuration Requests"/>
+    </register>
+    <register name="MISCCTRLSTS0_1.1.0" type="mmcfg" bus="1" dev="1" fun="0" offset="0x188" size="4" desc="MISC Control and Status Register 0">
+      <field name="inbound_configuration_enable" bit="1" size="1" desc="Enable Inbound Configuration Requests"/>
+    </register>
+    <register name="MISCCTRLSTS0_1.2.0" type="mmcfg" bus="1" dev="2" fun="0" offset="0x188" size="4" desc="MISC Control and Status Register 0">
+      <field name="inbound_configuration_enable" bit="1" size="1" desc="Enable Inbound Configuration Requests"/>
+    </register>
+    <register name="MISCCTRLSTS0_1.3.0" type="mmcfg" bus="1" dev="3" fun="0" offset="0x188" size="4" desc="MISC Control and Status Register 0">
+      <field name="inbound_configuration_enable" bit="1" size="1" desc="Enable Inbound Configuration Requests"/>
+    </register>
+
+    <!-- MMCFG -->
+    <register name="VTGENCTRL" type="mmcfg" bus="0" dev="5" fun="0" offset="0x184" size="4" desc="VTGENCTRL Register">
+      <field name="lockvtd" bit="15" size="1" desc="lockvtd"/>
+    </register>
+
+    <!-- GENPROTRANGE Registers -->
+    <register name="GENPROTRANGE1_BASE" type="mmcfg" bus="0" dev="5" fun="0" offset="0x210" size="8" desc="Generic Protected Memory Range 1 Base Address">
+      <field name="base_address" bit="16" size="35" desc="GENPROTRANGE 1 base address"/>
+    </register>
+    <register name="GENPROTRANGE1_LIMIT" type="mmcfg" bus="0" dev="5" fun="0" offset="0x218" size="8" desc="Generic Protected Memory Range 1 Limit Address">
+      <field name="limit_address" bit="16" size="35" desc="GENPROTRANGE 1 limit address"/>
+    </register>
+    <register name="GENPROTRANGE2_BASE" type="mmcfg" bus="0" dev="5" fun="0" offset="0x220" size="8" desc="Generic Protected Memory Range 2 Base Address">
+      <field name="base_address" bit="16" size="35" desc="GENPROTRANGE 2 base address"/>
+    </register>
+    <register name="GENPROTRANGE2_LIMIT" type="mmcfg" bus="0" dev="5" fun="0" offset="0x228" size="8" desc="Generic Protected Memory Range 2 Limit Address">
+      <field name="limit_address" bit="16" size="35" desc="GENPROTRANGE 2 limit address"/>
+    </register>
+    <register name="GENPROTRANGE0_BASE" type="mmcfg" bus="0" dev="5" fun="0" offset="0x200" size="8" desc="Generic Protected Memory Range 0 Base Address">
+      <field name="base_address" bit="16" size="35" desc="GENPROTRANGE 0 base address"/>
+    </register>
+    <register name="GENPROTRANGE0_LIMIT" type="mmcfg" bus="0" dev="5" fun="0" offset="0x208" size="8" desc="Generic Protected Memory Range 0 Limit Address">
+      <field name="limit_address" bit="16" size="35" desc="GENPROTRANGE 0 limit address"/>
+    </register>
+    <register name="GENPROTRANGE3_BASE" type="mmcfg" bus="0" dev="5" fun="0" offset="0x230" size="8" desc="Generic Protected Memory Range 3 Base Address">
+      <field name="base_address" bit="16" size="35" desc="GENPROTRANGE 3 base address"/>
+    </register>
+    <register name="GENPROTRANGE3_LIMIT" type="mmcfg" bus="0" dev="5" fun="0" offset="0x238" size="8" desc="Generic Protected Memory Range 3 Limit Address">
+      <field name="limit_address" bit="16" size="35" desc="GENPROTRANGE 3 limit address"/>
+    </register>
+    <register name="GENPROTRANGE4_BASE" type="mmcfg" bus="0" dev="5" fun="0" offset="0x240" size="8" desc="Generic Protected Memory Range 4 Base Address">
+      <field name="base_address" bit="16" size="35" desc="GENPROTRANGE 4 base address"/>
+    </register>
+    <register name="GENPROTRANGE4_LIMIT" type="mmcfg" bus="0" dev="5" fun="0" offset="0x248" size="8" desc="Generic Protected Memory Range 4 Limit Address">
+      <field name="limit_address" bit="16" size="35" desc="GENPROTRANGE 4 limit address"/>
+    </register>
+
+    <!-- SPSR PCIe Configuration Space -->
+    <register name="SMB_CMD_CFG_0" type="pcicfg" bus="1" dev="0x1E" fun="5" offset="0x9C" size="4" desc="SMB_CMD_CFG_0 Register">
+      <field name="smb_dis_wrt" bit="26" size="1" desc="Disable SMBus Write"/>
+    </register>
+    <register name="SMB_CMD_CFG_1" type="pcicfg" bus="1" dev="0x1E" fun="5" offset="0xA0" size="4" desc="SMB_CMD_CFG_1 Register">
+      <field name="smb_dis_wrt" bit="26" size="1" desc="Disable SMBus Write"/>
+    </register>
+    <register name="SMB_CMD_CFG_2" type="pcicfg" bus="1" dev="0x1E" fun="5" offset="0xA4" size="4" desc="SMB_CMD_CFG_2 Register">
+      <field name="smb_dis_wrt" bit="26" size="1" desc="Disable SMBus Write"/>
+    </register>
+
+    <!-- DCI registers -->
+    <register name="ECTRL" type="mm_msgbus" port="0xB8" offset="0x0004" size="4" desc="DCI Control Register">
+      <field name="LOCK" bit="0" size="1" desc="DCI Lock"/>
+      <field name="ENABLE" bit="4" size="1" desc="HDICEN - Host DCI Enable"/>
+      <field name="AVAILABLE" bit="8" size="1" desc="DCISTS - DCI Available Status"/>
+    </register>
+    
+    <!-- Power Control Unit (PCU) Registers -->
+    <register name="CSR_DESIRED_CORES_CFG2" type="pcicfg" bus="1" dev="0x1E" fun="1" offset="0xA0" size="4" desc="Number of cores-threads to exhist">
+      <field name="LOCK" bit="31" size="1" desc="Locks CSR_DESIRED_CORES register"/>
+    </register>
+    
+    <!-- SPI Flash Controller MMIO registers -->
+    <register name="HSFS" type="mmio" bar="SPIBAR" offset="0x04" size="4" desc="Hardware Sequencing Flash Status Register">
+      <field name="FDONE"     bit="0"  size="1" desc="Flash Cycle Done"/>
+      <field name="FCERR"     bit="1"  size="1" desc="Flash Cycle Error"/>
+      <field name="AEL"       bit="2"  size="1" desc="Access Error Log"/>
+      <field name="SAF_ERROR" bit="3"  size="1" desc="SAF Error"/>
+      <field name="SAF_DLE"   bit="4"  size="1" desc="SAF Data Length Error"/>
+      <field name="SCIP"      bit="5"  size="1" desc="SPI cycle in progress"/>
+      <field name="WRSDIS"    bit="11" size="1" desc="Write status disable"/>
+      <field name="PR34LKD"   bit="12" size="1" desc="PRR3 PRR4 Lock-Down"/>
+      <field name="FDOPSS"    bit="13" size="1" desc="Flash Descriptor Override Pin-Strap Status"/>
+      <field name="FDV"       bit="14" size="1" desc="Flash Descriptor Valid"/>
+      <field name="FLOCKDN"   bit="15" size="1" desc="Flash Configuration Lock-Down"/>
+      <field name="FGO"       bit="16" size="1" desc="Flash cycle go"/>
+      <field name="FCYCLE"    bit="17" size="4" desc="Flash Cycle Type"/>
+      <field name="WET"       bit="21" size="1" desc="Write Enable Type"/>
+      <field name="FDBC"      bit="24" size="6" desc="Flash Data Byte Count"/>
+      <field name="FSMIE"     bit="31" size="1" desc="Flash SPI SMI Enable"/>
+    </register>
+    <register name="PR0" type="mmio" bar="SPIBAR" offset="0x84" size="4" desc="Protected Range 0">
+      <field name="PRB" bit="0"  size="15" desc="Protected Range Base"/>
+      <field name="RPE" bit="15" size="1"  desc="Read Protection Enabled"/>
+      <field name="PRL" bit="16" size="15" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PR1" type="mmio" bar="SPIBAR" offset="0x88" size="4" desc="Protected Range 1">
+      <field name="PRB" bit="0"  size="15" desc="Protected Range Base"/>
+      <field name="RPE" bit="15" size="1"  desc="Read Protection Enabled"/>
+      <field name="PRL" bit="16" size="15" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PR2" type="mmio" bar="SPIBAR" offset="0x8C" size="4" desc="Protected Range 2">
+      <field name="PRB" bit="0"  size="15" desc="Protected Range Base"/>
+      <field name="RPE" bit="15" size="1"  desc="Read Protection Enabled"/>
+      <field name="PRL" bit="16" size="15" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PR3" type="mmio" bar="SPIBAR" offset="0x90" size="4" desc="Protected Range 3">
+      <field name="PRB" bit="0"  size="15" desc="Protected Range Base"/>
+      <field name="RPE" bit="15" size="1"  desc="Read Protection Enabled"/>
+      <field name="PRL" bit="16" size="15" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PR4" type="mmio" bar="SPIBAR" offset="0x94" size="4" desc="Protected Range 4">
+      <field name="PRB" bit="0"  size="15" desc="Protected Range Base"/>
+      <field name="RPE" bit="15" size="1"  desc="Read Protection Enabled"/>
+      <field name="PRL" bit="16" size="15" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="GPR0" type="mmio" bar="SPIBAR" offset="0x98" size="4" desc="Global Protected Range 0">
+      <field name="PRB" bit="0"  size="15" desc="Protected Range Base"/>
+      <field name="RPE" bit="15" size="1"  desc="Read Protection Enabled"/>
+      <field name="PRL" bit="16" size="15" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PREOP" type="mmio" bar="SPIBAR" offset="0xA4" size="2" desc="Prefix Opcode Configuration Register">
+      <field name="PREOP0" bit="0" size="8" desc="Prefix Opcode 0"/>
+      <field name="PREOP1" bit="8" size="8" desc="Prefix Opcode 1"/>
+    </register>
+    <register name="OPTYPE" type="mmio" bar="SPIBAR" offset="0xA4" size="4" desc="Opcode Type Configuration Register">
+      <field name="PREFIX0" bit="0"  size="8" desc="Prefix Opcode 0"/>
+      <field name="PREFIX1" bit="8"  size="8" desc="Prefix Opcode 1"/>
+      <field name="OPTYPE0" bit="16" size="2" desc="Opcode Type 0"/>
+      <field name="OPTYPE1" bit="18" size="2" desc="Opcode Type 1"/>
+      <field name="OPTYPE2" bit="20" size="2" desc="Opcode Type 2"/>
+      <field name="OPTYPE3" bit="22" size="2" desc="Opcode Type 3"/>
+      <field name="OPTYPE4" bit="24" size="2" desc="Opcode Type 4"/>
+      <field name="OPTYPE5" bit="26" size="2" desc="Opcode Type 5"/>
+      <field name="OPTYPE6" bit="28" size="2" desc="Opcode Type 6"/>
+      <field name="OPTYPE7" bit="30" size="2" desc="Opcode Type 7"/>
+    </register>
+    <register name="OPMENU" type="mmio" bar="SPIBAR" offset="0xA8" size="8" desc="Opcode Menu Configuration Register">
+      <field name="OPCODE0" bit="0"  size="8" desc="Allowable Opcode 0"/>
+      <field name="OPCODE1" bit="8"  size="8" desc="Allowable Opcode 1"/>
+      <field name="OPCODE2" bit="16" size="8" desc="Allowable Opcode 2"/>
+      <field name="OPCODE3" bit="24" size="8" desc="Allowable Opcode 3"/>
+      <field name="OPCODE4" bit="32" size="8" desc="Allowable Opcode 4"/>
+      <field name="OPCODE5" bit="40" size="8" desc="Allowable Opcode 5"/>
+      <field name="OPCODE6" bit="48" size="8" desc="Allowable Opcode 6"/>
+      <field name="OPCODE7" bit="56" size="8" desc="Allowable Opcode 7"/>
+    </register>
+    <register name="OPMENU_LO" type="mmio" bar="SPIBAR" offset="0xA8" size="4" desc="Opcode Menu Configuration Register Low">
+      <field name="OPCODE0" bit="0"  size="8" desc="Allowable Opcode 0"/>
+      <field name="OPCODE1" bit="8"  size="8" desc="Allowable Opcode 1"/>
+      <field name="OPCODE2" bit="16" size="8" desc="Allowable Opcode 2"/>
+      <field name="OPCODE3" bit="24" size="8" desc="Allowable Opcode 3"/>
+    </register>
+    <register name="OPMENU_HI" type="mmio" bar="SPIBAR" offset="0xAC" size="4" desc="Opcode Menu Configuration Register High">
+      <field name="OPCODE4" bit="0"  size="8" desc="Allowable Opcode 4"/>
+      <field name="OPCODE5" bit="8"  size="8" desc="Allowable Opcode 5"/>
+      <field name="OPCODE6" bit="16" size="8" desc="Allowable Opcode 6"/>
+      <field name="OPCODE7" bit="24" size="8" desc="Allowable Opcode 7"/>
+    </register>      
+    <register name="BIOS_FDOC" type="mmio" bar="SPIBAR" offset="0xB4" size="4" desc="Flash Descriptor Observability Control">
+      <field name="FDSS" bit="12" size="3" desc="Flash Descriptor Section Select"/>
+      <field name="FDSI" bit="2" size="10" desc="Flash Descriptor Section Index"/>
+    </register>
+    <register name="BIOS_FDOD" type="mmio" bar="SPIBAR" offset="0xB8" size="4" desc="Flash Descriptor Observability Data">
+      <field name="FDOD" bit="0" size="31" desc="Flash Descriptor Section Data"/>
+    </register>
+    <register name="LVSCC" type="mmio" bar="SPIBAR" offset="0xC4" size="4" desc="Vendor Specific Component Capabilities for Component 0">
+      <field name="LWG"          bit="2"  size="1" desc="Lower Write Granularity"/>
+      <field name="LWSR"         bit="3"  size="1" desc="Lower Write Status Required"/>
+      <field name="LWEWS"        bit="4"  size="1" desc="Write Enable on Write Status"/>
+      <field name="EO_4k"        bit="8"  size="8" desc="4k Erase Opcode"/>
+      <field name="EO_64k"       bit="16" size="8" desc="64k Erase Opcode"/>
+      <field name="EO_4k_VALID"  bit="28" size="1" desc="4k Erase Valid"/>
+      <field name="EO_64k_VALID" bit="29" size="1" desc="64k Erase Valid"/>
+      <field name="VCL"          bit="30" size="1" desc="Vendor Component Lock"/>
+      <field name="CPPTV"        bit="31" size="1" desc="Component Property Parameter Table Valid"/>
+    </register>
+    <register name="UVSCC" type="mmio" bar="SPIBAR" offset="0xC8" size="4" desc="Vendor Specific Component Capabilities for Component 1">
+      <field name="UWG"          bit="2"  size="1" desc="Upper Write Granularity"/>
+      <field name="UWSR"         bit="3"  size="1" desc="Upper Write Status Required"/>
+      <field name="UWEWS"        bit="4"  size="1" desc="Write Enable on Write Status"/>
+      <field name="EO_4k"        bit="8"  size="8" desc="4k Erase Opcode"/>
+      <field name="EO_64k"       bit="16" size="8" desc="64k Erase Opcode"/>
+      <field name="EO_4k_VALID"  bit="28" size="1" desc="4k Erase Valid"/>
+      <field name="EO_64k_VALID" bit="29" size="1" desc="64k Erase Valid"/>
+      <field name="CPPTV"        bit="31" size="1" desc="Component Property Parameter Table Valid"/>
+    </register>
+    <register name="SRDL" type="mmio" bar="SPIBAR" offset="0xF0" size="4" desc="Soft Reset Data Lock">
+      <field name="SSL" bit="0" size="1" desc="Set_Stap Lock"/>
+    </register>
+
+  </registers>
+  
+  <controls>
+  </controls>
+  
+</configuration>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<configuration platform="SKX" >
+<!-- XML configuration file for Skylake/Purely Server
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+
+  <pci>
+  </pci>
+
+  <mmio>
+    <bar name="PWRMBASE" bus="0" dev="0x1F" fun="2" reg="0x48" width="4" mask="0xFFFFF000"    size="0x1000" desc="PM Base Address"/>
+  </mmio>
+
+  <io>
+  </io>
+
+  <memory>
+  </memory>
+
+  <registers>
+ 
+    <register name="PM_CFG" type="mmio" bar="PWRMBASE" offset="0x18" size="4" desc="PMC Configuration">
+      <field name="BIT27" bit="27" size="1" desc="BIT 27"/>
+    </register>
+
+  </registers>
+
+  <controls>
+  </controls>
+  
+</configuration>
