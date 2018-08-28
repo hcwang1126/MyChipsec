@@ -1,0 +1,22 @@
+*********************************************************
+ 
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+*********************************************************
+
+
+Pre-Release Notes
+=================
+
+Questions about CHIPSEC can be directed to chipsec@intel.com 
+
+Revision 1.2.5
+--------------
+
+This version includes the following new or updated modules:
+
+#. pmc -- removed checking for the value of bit 22 in PM_CFG register
+

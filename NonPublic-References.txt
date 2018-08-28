@@ -1,0 +1,103 @@
+Non-Public References
+=====================
+
+Existing modules can be mapped to specific security issues.  
+Many issues are addressed in the Platform Secure Configuration Specification (PSCS) for a given platform. 
+In some cases, Intel's Product Security Incident Response Team (PSIRT), the UEFI Security Response Team (USRT), or other organizations have listed advisories for the issue. 
+There may be other references for these issues. If you believe some are missing, please contact chipsec@intel.com with the relevant information that should be added.
+
++------------------------------+----------------------------------------------+
+| Module                       | References                                   |
++==============================+==============================================+
+| biosguard                    |                                              |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| configlock                   | PSCS: (ConfigLock in LT_Lock_Memory)         | 
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| mclock                       | PSCS: MC_LOCK                                |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| memconfig                    | PSCS: MC_LOCK, EPBAR, MCHBAR,                |
+| (non-public)                 | GGC, PAVPC, DPR, PCIEXBAR, DMIBAR,           |
+|                              | MESEG_MASK, REMAPLIMIT, TOM, TOUUD,          |
+|                              | BDSM, BGSM, TSEGMB, TOLUD                    |
++------------------------------+----------------------------------------------+
+| pmc                          | PSCS: PMC locks                              |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| remap                        | PSCS: REMAPBASE, REMAPLIMIT                  |
++------------------------------+----------------------------------------------+
+| smm_dma                      | PSCS: TSEG                                   |
++------------------------------+----------------------------------------------+
+| spd                          | PSCS: SPD Write Disable                      |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| common.bios_kbrd_buffer      |                                              |
++------------------------------+----------------------------------------------+
+| common.bios_smi              | PSIRT TA (CDI #548743)                       |
+|                              |                                              |
+|                              | PSCS: TCO_EN, SMI_EN, SMI_LOCK,              |
+|                              | TCO_LOCK                                     |
++------------------------------+----------------------------------------------+
+| common.bios_ts               | PSCS: BILD, TSS                              |
++------------------------------+----------------------------------------------+
+| common.bios_wp               | PSIRT TA (CDI #548743)                       |
+|                              |                                              |
+|                              | PSCS: BLE, BIOSWE, SMM_BWP                   |
++------------------------------+----------------------------------------------+
+| common.smm                   | PSCS: SMRAMC[D_LCK, D_OPEN]                  |
++------------------------------+----------------------------------------------+
+| common.smrr                  | PSCS: SMRR enabled, WB, etc.                 |
++------------------------------+----------------------------------------------+
+| common.spi_access            | PSCS: Flash descriptor permissions           |
+|                              |                                              |
+| (non-public)                 | NOTE: This test includes additional checks   |
+|                              | beyond what is done in the public version.   |
++------------------------------+----------------------------------------------+
+| common.spi_desc              | PSCS: Flash descriptor permissions           |
+|                              | (write access to flash descriptor only)      |
++------------------------------+----------------------------------------------+
+| common.spi_fdopss            | PSCS: FDOPSS                                 |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| common.spi_lock              | PSCS: FLOCKDN                                |
+|                              |                                              |
+|                              | INTEL PSIRT-TA-201708-001                    |
+|                              | CVE-2017-5703                                |
++------------------------------+----------------------------------------------+
+| common.spi_vcl               | PSCS: LVCL                                   |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| common.secureboot.variables  | PSIRT TA (CDI #527669, 542550)               |
++------------------------------+----------------------------------------------+
+| common.uefi.access_platform  | PSIRT TA (VIP 1001888)                       |
+| (non-public)                 |                                              |
++------------------------------+----------------------------------------------+
+| common.uefi.access_uefispec  | PSIRT TA (VIP 1001888)                       |
++------------------------------+----------------------------------------------+
+| common.uefi.s3bootscript     | PSIRT TA INTEL-TA-201409-001                 |
+|                              |                                              |
+| (non-public)                 | USRT Mantis 1195                             |
+|                              |                                              |
+|                              | CERT/CC VU#976132                            |
+|                              |                                              |
+|                              | CVE-2014-8274                                |
++------------------------------+----------------------------------------------+
+| tools.uefi.s3script-modify   | PSIRT TA INTEL-TA-201409-001                 |
+|                              |                                              |
+| (non-public)                 | USRT Mantis 1195                             |
+|                              |                                              |
+|                              | CERT/CC VU#976132                            |
+|                              |                                              |
+|                              | CVE-2014-8274                                |
++------------------------------+----------------------------------------------+
+| tools.secureboot.te          | PSIRT TA (CDI #527669, 542550)               |
++------------------------------+----------------------------------------------+
+| tools.sw_seq                 | INTEL PSIRT-TA-201708-001                    |
+|                              |                                              |
+| (non-public)                 | CVE-2017-5703                                |
++------------------------------+----------------------------------------------+
+| tools.smm.smm_ptr            | PSIRT TA (CDI #548743, 548744)               |
++------------------------------+----------------------------------------------+
+
