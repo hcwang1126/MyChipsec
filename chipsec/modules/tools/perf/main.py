@@ -80,7 +80,7 @@ _MODULE_NAME = 'perf'
 TAGS = [MTAG_HWCONFIG]
 
 
-class perf(BaseModule):
+class main(BaseModule):
 
     def __init__(self):
         BaseModule.__init__(self)
