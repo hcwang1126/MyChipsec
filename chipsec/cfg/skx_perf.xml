@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<configuration platform="SKX" >
+<!-- XML configuration file for Skylake/Purely Server
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+
+  <pci>
+  </pci>
+
+  <mmio>
+  </mmio>
+
+  <io>
+  </io>
+
+  <memory>
+  </memory>
+
+  <registers>
+    <register name="DBP_CONFIG"        type="pcicfg" bus="1" dev="29" fun="0" offset="0x28C" size="4" desc="DBP Config">
+      <field name="DEAD_ON_VALID_LLC"    bit="6" size="1" desc="0 means feature is enabled, the LLC can opportunistically fill dead lines into the LLC when available."/>
+    </register>
+    
+    <register name="HA_COH_CONFIG_1"        type="pcicfg" bus="1" dev="8" fun="0" offset="0x11C" size="4" desc="HA Coherency Config Register">
+      <field name="STALE_A_TO_S_OPT_EN"    bit="12" size="1" desc="A to S directory optimization."/>
+    </register>
+    
+    <register name="CSR_DESIRED_CORES_CFG2"        type="pcicfg" bus="1" dev="30" fun="1" offset="0xA0" size="4" desc="Single bit that were part of CSR_DESIRED_CORES_CFG broken out to this register to keep CSR_DESIRED_CORES_CFG to have a core mask only.">
+      <field name="SMT_DISABLE"    bit="30" size="1" desc="Disable simultaneous multi-threading (HT) in all cores if this bit is set to '1'."/>
+    </register>
+	
+	<register name="UPI0_KTI_AG_CTRL"        type="pcicfg" bus="3" dev="14" fun="0" offset="0xF0" size="4" desc="Intel UPI Agent Control.">
+      <field name="ENABLE_PREFETCH"    bit="24" size="1" desc="Prefetch enable for Remote Rd Types."/>
+	  <field name="SUPPRESS_MEM_RD_PREFETCH_RDCUR"    bit="26" size="1" desc="This bit defeatures Intel UPI generation of memory read prefetches of RdCur."/>
+    </register>
+	
+	<register name="UPI0_KTILK_SNC_CONFIG"        type="pcicfg" bus="3" dev="14" fun="0" offset="0x180" size="4" desc="Sub NUMA Clustering (SNC) Configuration.">
+      <field name="FULL_SNC_EN"    bit="0" size="1" desc="Enable SNC."/>
+    </register>
+
+    <register name="SNC_CONFIG"    type="msr" msr="0x152" desc="Used with Sub NUMA Clustering(SNC).">
+      <field name="SNC_ENABLE" bit="0" size="1" desc="SNC Enable bit" />
+    </register>
+
+    <register name="MSR_FLEX_RATIO"    type="msr" msr="0x194" desc="The Maximum Nonturbo Ratio">
+      <field name="FLEX_RATIO" bit="8" size="8" desc="Desired Flex Ratio." />
+      <field name="FLEX_EN" bit="16" size="1" desc="Flex Ratio Enabled." />
+      <field name="OC_LOCK" bit="20" size="1" desc="Overclocking Lock." />
+    </register>
+
+	<register name="MSR_MISC_PWR_MGMT"    type="msr" msr="0x1AA" desc="Miscellaneous Power Management register">
+      <field name="ENUMERATE_HWP" bit="6" size="1" desc="(1) will cause the HWP Base feature bit to report as present in CPUID" />
+	  <field name="BIOS_HWP_ENABLE" bit="8" size="1" desc="Setting this bit (1) will enable HWP with its default settings without the ability for software to access HWP MSRs" />
+    </register>
+	
+    <register name="MSR_TURBO_GROUP_CORE_CNT"    type="msr" msr="0x1AE" desc="Group Size of Active Cores for Turbo Mode Operation (RW)">
+      <field name="GROUP_0" bit="0" size="8" desc="Group 0 Core Count Threshold" />
+      <field name="GROUP_1" bit="8" size="8" desc="Group 1 Core Count Threshold" />
+      <field name="GROUP_2" bit="16" size="8" desc="Group 2 Core Count Threshold" />
+      <field name="GROUP_3" bit="24" size="8" desc="Group 3 Core Count Threshold" />
+      <field name="GROUP_4" bit="32" size="8" desc="Group 4 Core Count Threshold" />
+      <field name="GROUP_5" bit="40" size="8" desc="Group 5 Core Count Threshold" />
+      <field name="GROUP_6" bit="48" size="8" desc="Group 6 Core Count Threshold" />
+      <field name="GROUP_7" bit="56" size="8" desc="Group 7 Core Count Threshold" />
+    </register>
+	
+	  <register name="IA32_PM_ENABLE"    type="msr" msr="0x770" desc="Enable/Disable HWP">
+      <field name="HWP_ENABLE" bit="0" size="1" desc="Enable HWP with autonomous. The processor will disregard input from legacy interface (IA32_PERF_CTL)." />
+    </register>
+
+    <register name="IA32_PM_ENABLE"    type="msr" msr="0x770" desc="Enable/Disable HWP">
+      <field name="HWP_ENABLE" bit="0" size="1" desc="Enable HWP with autonomous. The processor will disregard input from legacy interface (IA32_PERF_CTL)." />
+    </register>
+
+    <register name="MSR_VIRTUAL_MSR_LLC_PREFETCH"    type="msr" msr="0x972" desc="0: LLC prefetch enable">
+    </register>
+
+  </registers>
+
+  <controls>
+  </controls>
+  
+</configuration>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<configuration>
+<!-- Common xml configuration file
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+
+  <!-- #################################### -->
+  <!--                                      -->
+  <!-- Configuration registers              -->
+  <!--                                      -->
+  <!-- #################################### -->
+  <pci>
+  </pci>
+
+  <mmio>
+  </mmio>
+
+  <io>
+  </io>
+
+  <memory>
+  </memory>
+
+  <registers>
+    <register name="IA32_MISC_ENABLE"    type="msr" msr="0x1A0" desc="Miscellaneous Feature Control Register.">
+      <field name="TURBO_MODE_DISABLE" bit="38" size="1" desc="Disable turbo mode." />
+    </register>
+  
+	<register name="Prefetchers"    type="msr" msr="0x1A4" desc="Miscellaneous Feature Control Register.">
+      <field name="HardwarePrefetcher" bit="0" size="1" desc="Lightly threaded applications and some benchmarks can benefit from having the hardware prefetcher enabled." />
+	  <field name="AdjacentCacheLinePrefetch" bit="1" size="1" desc="Lightly threaded applications and some benchmarks can benefit from having the hardware prefetcher enabled." />
+	  <field name="DCUStreamerPrefetcher" bit="2" size="1" desc="Lightly threaded applications and some benchmarks can benefit from having the hardware prefetcher enabled." />
+	  <field name="DCUIpPrefetcher" bit="3" size="1" desc="DCU IP prefetcher is typically best left enabled for most environments. Some environments may benefit from having it disabled (e.g. Java)." />
+    </register>
+
+    <register name="MSR_TURBO_RATIO_LIMIT"    type="msr" msr="0x1AD" desc="Maximum Ratio Limit of Turbo Mode by Core Groups (RW)">
+      <field name="GROUP_0" bit="0" size="8" desc="Maximum Ratio Limit for Active cores in Group 0" />
+      <field name="GROUP_1" bit="8" size="8" desc="Maximum Ratio Limit for Active cores in Group 1" />
+      <field name="GROUP_2" bit="16" size="8" desc="Maximum Ratio Limit for Active cores in Group 2" />
+      <field name="GROUP_3" bit="24" size="8" desc="Maximum Ratio Limit for Active cores in Group 3" />
+      <field name="GROUP_4" bit="32" size="8" desc="Maximum Ratio Limit for Active cores in Group 4" />
+      <field name="GROUP_5" bit="40" size="8" desc="Maximum Ratio Limit for Active cores in Group 5" />
+      <field name="GROUP_6" bit="48" size="8" desc="Maximum Ratio Limit for Active cores in Group 6" />
+      <field name="GROUP_7" bit="56" size="8" desc="Maximum Ratio Limit for Active cores in Group 7" />
+    </register>
+	
+	<register name="IA32_ENERGY_PERF_BIAS"    type="msr" msr="0x1B0" desc="This register allows software to control the Energy Efficiency Policy in the CPU.">
+      <field name="ENERGY_POLICY" bit="0" size="4" desc="0x0 means Performance mode." />
+    </register>
+	
+	<register name="MSR_POWER_CTL"    type="msr" msr="0x1FC" desc="Power Control Register allows en/disable of specific power and thermal management features.">
+	  <field name="EE_TURBO_DISABLE" bit="19" size="1" desc="Energy Efficient Turbo; 1 = disabled, 0 = enabled." />
+      <field name="PWR_PERF_TUNING_CFG_MODE" bit="25" size="1" desc="controlled by 0 - OS, 1 - BIOS." />
+    </register>
+    
+    <register name="VR_MISC_CONFIG"    type="msr" msr="0x603" desc="This register is used to define the load characteristics of the Primary power plane.">
+      <field name="IOUT_SLOPE" bit="40" size="10" desc="This is a slope correction for VR dIout readings for positive/negative correction." />
+    </register>
+
+    <register name="MSR_RAPL_POWER_UNIT"    type="msr" msr="0x606" desc="Unit Multipliers used in RAPL Interfaces (R/O)">
+      <field name="POWER_UNITS" bit="0" size="4" desc="Power Units." />
+    </register>
+
+    <register name="MSR_PKG_POWER_LIMIT"    type="msr" msr="0x610" desc="PKG RAPL Power Limit Control (R/W)">
+      <field name="PL1" bit="0" size="15" desc="Pkg Power Limit #1" />
+      <field name="PL1_ENABLED" bit="15" size="1" desc="Enable limit #1" />
+      <field name="PL1_CRITICAL_CLAMP_ENABLED" bit="16" size="1" desc="Pkg clamping limit #1" />
+      <field name="PL1_TIME" bit="17" size="7" desc="Time window Power Limit #1" />
+      <field name="PL2" bit="32" size="15" desc="Pkg Power Limit #2" />
+      <field name="PL2_ENABLED" bit="47" size="1" desc="Enable limit #2" />
+      <field name="PL2_CRITICAL_CLAMP_ENABLED" bit="48" size="1" desc="Pkg clamping limit #2" />
+      <field name="PL2_TIME" bit="49" size="7" desc="Time window Power Limit #2" />
+      <field name="LOCK" bit="63" size="1" desc="Lock MSR 0x610 after all other bits are set." />
+    </register>
+	
+	<register name="ENERGY_PERF_BIAS_CONFIG"    type="msr" msr="0xA01" desc="This register allows BIOS to control the Energy Performance BIAS.">
+      <field name="ENERGY_POLICY" bit="3" size="4" desc="Higher value indicates more power saving." />
+    </register>
+	
+  </registers>
+
+  <controls>
+  </controls>
+  
+</configuration>
