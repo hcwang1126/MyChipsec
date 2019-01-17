@@ -1,0 +1,793 @@
+BUILD: Examining d:\mychipsec\drivers\win7 directory for files to compile.
+oacr invalidate root:amd64chk /autocleanqueue
+1>Compiling and Linking d:\mychipsec\drivers\win7 *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1>d:\mychipsec\drivers\win7: TARGETPATH is .\sys
+1> rc.exe -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""AMD64"""  -DSXS_TARGET="""chipsec_hlpr.sys"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  /r /fo d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\chipsec_hlpr.res /D_WIN64 /D_AMD64_ /DAMD64   /DCONDITION_HANDLING=1 /DNT_UP=1  /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0601 /DWINVER=0x0601 /D_WIN32_IE=0x0800    /DWIN32_LEAN_AND_MEAN=1  /DDEVL=1 /DDBG=1 /D__BUILDMACHINE__=WinDDK   /D_DLL=1 /DNDEBUG  /DDEPRECATE_DDK_FUNCTIONS=1 /DMSC_NOOPT /DNTDDI_VERSION=0x06010000   /Iinclude /Id:\mychipsec\drivers\win7\objchk_win7_amd64\amd64 /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\crt .\chipsec_hlpr.rc
+1>Microsoft (R) Windows (R) Resource Compiler Version 6.1.6908.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1> ml64 /c /Cx /nologo /Iamd64\ /I. /Iinclude /Id:\mychipsec\drivers\win7\objchk_win7_amd64\amd64 /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\crt  /Zi /Zi /D_WIN64 /D_AMD64_ /DAMD64   /DCONDITION_HANDLING=1 /DNT_UP=1  /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0601 /DWINVER=0x0601 /D_WIN32_IE=0x0800    /DWIN32_LEAN_AND_MEAN=1   /DDEVL=1 /DDBG=1 /D__BUILDMACHINE__=WinDDK  /Fod:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\cpu.obj amd64\cpu.asm
+1> Assembling: amd64\cpu.asm
+1> C:\WinDDK\7600.16385.1\Bin\amd64\oacr\oacrcl @d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\cl.rsp
+1>Microsoft (R) C/C++ Optimizing Compiler Version 15.00.30729.207 for x64
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>cl /Fo"d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64/"
+1> /FC
+1> /Iamd64\
+1> /I.
+1> /Iinclude
+1> /Id:\mychipsec\drivers\win7\objchk_win7_amd64\amd64
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\ddk
+1> /IC:\WinDDK\7600.16385.1\inc\ddk
+1> /IC:\WinDDK\7600.16385.1\inc\crt
+1> /D_WIN64
+1> /D_AMD64_
+1> /DAMD64
+1> /DCONDITION_HANDLING=1
+1> /DNT_UP=1
+1> /DNT_INST=0
+1> /DWIN32=100
+1> /D_NT1X_=100
+1> /DWINNT=1
+1> /D_WIN32_WINNT=0x0601
+1> /DWINVER=0x0601
+1> /D_WIN32_IE=0x0800
+1> /DWIN32_LEAN_AND_MEAN=1
+1> /DDEVL=1
+1> /DDBG=1
+1> /D__BUILDMACHINE__=WinDDK
+1> /D_DLL=1
+1> /DNDEBUG
+1> /DDEPRECATE_DDK_FUNCTIONS=1
+1> /DMSC_NOOPT
+1> /DNTDDI_VERSION=0x06010000
+1> /c
+1> /Zc:wchar_t-
+1> /Zl
+1> /Zp8
+1> /Gy
+1> -cbstring
+1> /W3
+1> /EHs-c-
+1> /GR-
+1> /GF
+1> /GS
+1> /Z7
+1> /Od
+1> /Oi
+1> /GL
+1> /Z7
+1> /DKMDF_MAJOR_VERSION_STRING=01
+1> /DKMDF_MINOR_VERSION_STRING=009
+1> /typedil-
+1> /wd4603
+1> /wd4627
+1> /homeparams
+1> /FIC:\WinDDK\7600.16385.1\inc\api\warning.h
+1> .\driver.c 
+1>driver.c
+1> C:\WinDDK\7600.16385.1\Bin\amd64\oacr\oacrlink /out:.\sys\amd64\chipsec_hlpr.sys /machine:amd64 @d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\lnk.rsp
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/VERBOSE 
+1>/MAP 
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/pdbcompress 
+1>/STACK:0x40000,0x1000 
+1>/driver 
+1>/base:0x10000 
+1>/subsystem:native,6.01 
+1>/entry:GsDriverEntry 
+1>/out:.\sys\amd64\chipsec_hlpr.sys 
+1>d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\chipsec_hlpr.res 
+1>d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\cpu.obj 
+1>d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\driver.obj 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wdmsec.lib 
+1>Processed /NODEFAULTLIB (suppressing all default libs)
+1>Starting pass 1
+1>driver.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+1>Invoking LINK.EXE:
+1> /out:.\sys\amd64\chipsec_hlpr.sys /machine:amd64 @d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\lnk.rsp 
+1> /LTCG
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/VERBOSE 
+1>/MAP 
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/pdbcompress 
+1>/STACK:0x40000,0x1000 
+1>/driver 
+1>/base:0x10000 
+1>/subsystem:native,6.01 
+1>/entry:GsDriverEntry 
+1>/out:.\sys\amd64\chipsec_hlpr.sys 
+1>d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\chipsec_hlpr.res 
+1>d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\cpu.obj 
+1>d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\driver.obj 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wdmsec.lib 
+1>Processed /NODEFAULTLIB (suppressing all default libs)
+1>Starting pass 1
+1>Searching libraries
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib:
+1> Found GsDriverEntry
+1> Loaded BufferOverflowK.lib(gs_support.obj)
+1> Found __security_check_cookie
+1> Referenced in driver.obj
+1> Loaded BufferOverflowK.lib(amdsecgs.obj)
+1> Found __report_gsfailure
+1> Referenced in BufferOverflowK.lib(amdsecgs.obj)
+1> Loaded BufferOverflowK.lib(gs_report.obj)
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib:
+1> Found __imp_sprintf
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_ExAllocatePoolWithTag
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_KeQueryActiveProcessors
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_KeQueryActiveProcessorCount
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_IoDeleteSymbolicLink
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_ExFreePoolWithTag
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_RtlInitUnicodeString
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_IoDeleteDevice
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_MmFreeContiguousMemory
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_MmUnmapIoSpace
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_MmGetPhysicalAddress
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_MmMapIoSpace
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_IofCompleteRequest
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_IoCreateSymbolicLink
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_KeSetSystemAffinityThread
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_RtlAssert
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_KeNumberProcessors
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found DbgPrint
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_MmAllocateContiguousMemory
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __imp_KeBugCheckEx
+1> Referenced in BufferOverflowK.lib(gs_report.obj)
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __IMPORT_DESCRIPTOR_ntoskrnl
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found __NULL_IMPORT_DESCRIPTOR
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Found ntoskrnl_NULL_THUNK_DATA
+1> Referenced in ntoskrnl.lib(ntoskrnl.exe)
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib:
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib:
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\wdmsec.lib:
+1> Found SDDL_DEVOBJ_SYS_ALL_ADM_ALL
+1> Referenced in driver.obj
+1> Loaded wdmsec.lib(iosddl.obj)
+1> Found WdmlibIoCreateDeviceSecure
+1> Referenced in driver.obj
+1> Loaded wdmsec.lib(wlwrap.obj)
+1> Found __imp_MmGetSystemRoutineAddress
+1> Referenced in wdmsec.lib(wlwrap.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found IoDevObjCreateDeviceSecure
+1> Referenced in wdmsec.lib(wlwrap.obj)
+1> Loaded wdmsec.lib(iodevobj.obj)
+1> Found __imp_IoCreateDevice
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found PpRegStateReadCreateClassCreationSettings
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Loaded wdmsec.lib(ppregstate.obj)
+1> Found SeSddlSecurityDescriptorFromSDDL
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Loaded wdmsec.lib(sesddl.obj)
+1> Found __imp_ZwClose
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_ObOpenObjectByPointer
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_ZwSetSecurityObject
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found SeUtilSecurityInfoFromSecurityDescriptor
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Loaded wdmsec.lib(seutil.obj)
+1> Found IoDeviceObjectType
+1> Referenced in wdmsec.lib(iodevobj.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found CmRegUtilWstrValueSetUcString
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Loaded wdmsec.lib(cmregutil.obj)
+1> Found _snwprintf
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlLengthSecurityDescriptor
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_SeCaptureSecurityDescriptor
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __GSHandlerCheck
+1> Referenced in wdmsec.lib(ppregstate.obj)
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(gshandler.obj)
+1> Found __imp_RtlCreateSecurityDescriptor
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlSetDaclSecurityDescriptor
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlAbsoluteToSelfRelativeSD
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_IoIsWdmVersionAvailable
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_SeExports
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found wcschr
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found _wcsnicmp
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlLengthSid
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlAddAccessAllowedAce
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found memset
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Loaded wdmsec.lib(memset.obj)
+1> Found memcpy
+1> Referenced in wdmsec.lib(sesddl.obj)
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(memcpy.obj)
+1> Found __imp_RtlGetSaclSecurityDescriptor
+1> Referenced in wdmsec.lib(seutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlGetDaclSecurityDescriptor
+1> Referenced in wdmsec.lib(seutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlGetGroupSecurityDescriptor
+1> Referenced in wdmsec.lib(seutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlGetOwnerSecurityDescriptor
+1> Referenced in wdmsec.lib(seutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_ZwOpenKey
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_ZwCreateKey
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_ZwQueryValueKey
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_ZwSetValueKey
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1> Found __imp_RtlFreeUnicodeString
+1> Referenced in wdmsec.lib(cmregutil.obj)
+1> Loaded wdmsec.lib(ntoskrnl.exe)
+1>Finished searching libraries
+1>Finished pass 1
+1>Generating code
+1>Finished generating code
+1>Searching libraries
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib:
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib:
+1> Found __GSHandlerCheck_SEH
+1> Referenced in driver.obj
+1> Loaded ntoskrnl.lib(gshandlerseh.obj)
+1> Found __C_specific_handler
+1> Referenced in ntoskrnl.lib(gshandlerseh.obj)
+1> Loaded ntoskrnl.lib(ntoskrnl.exe)
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib:
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib:
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\wdmsec.lib:
+1> Searching C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib:
+1>Finished searching libraries
+1>Invoking CVTRES.EXE:
+1> /machine:amd64
+1> /verbose
+1> /out:"C:\Users\hwang11\AppData\Local\Temp\lnkD98.tmp"
+1> /readonly
+1> "d:\mychipsec\drivers\win7\objchk_win7_amd64\amd64\chipsec_hlpr.res"
+1>Microsoft (R) Windows Resource To Object Converter Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>Processing /ORDER options
+1> External code objects not listed in the /ORDER file:
+1> RtlSetDaclSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DA@NMCBKHPF@?$FLchipsec?$FN?$FLIOCTL_HYPERCALL?$FN?5retur@HFIDCDCB@		; driver.obj
+1> ??_C@_0CK@FIHFKOIA@?$FLchipsec?$FN?5ERROR?3?5STATUS_BUFFER_T@HFIDCDCB@		; driver.obj
+1> ??_C@_0CI@NCCMEPHG@?$FLchipsec?$FN?$FLIOCTL_CPUID?$FN?5CPUID?5ret@HFIDCDCB@		; driver.obj
+1> ??_C@_0EI@ECBDKJBJ@?$FLchipsec?$FN?5ERROR?3?5STATUS_BUFFER_T@HFIDCDCB@		; driver.obj
+1> SeSetSecurityAccessMask		; wdmsec.lib(seutil.obj)
+1> ??_C@_0CB@IAMPFNMM@?$FLchipsec?$FN?5?$DO?5IOCTL_WRITE_PHYSMEM?6@HFIDCDCB@		; driver.obj
+1> ??_C@_0DC@ODJOBENL@?$FLchipsec?$FN?$FLIOCTL_WRITE_PHYSMEM?$FN?5W@HFIDCDCB@		; driver.obj
+1> ??_C@_0EC@DMBIDFOB@?$FLchipsec?$FN?5ERROR?3?5STATUS_UNSUCCES@HFIDCDCB@		; driver.obj
+1> ??_C@_0EE@ICLHHCIL@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@		; driver.obj
+1> ??_C@_0GO@HHOMJFME@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5ERROR?3?5ST@HFIDCDCB@		; driver.obj
+1> ??_C@_0CA@FADGKMBP@?$FLchipsec?$FN?5?$DO?5IOCTL_FREE_PHYSMEM?6?$AA@HFIDCDCB@		; driver.obj
+1> RtlGetDaclSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> wcschr		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0CA@JNCHINIH@?$FLchipsec?$FN?5ERROR?3?5invalid?5IOCTL?6?$AA@HFIDCDCB@		; driver.obj
+1> SepSddlGetAclForString		; wdmsec.lib(sesddl.obj)
+1> CmRegUtilWstrValueSetWstrString		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_1DC@EBFHNAIH@?$AA?2?$AAD?$AAo?$AAs?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAs?$AA?2?$AAc?$AAh?$AAi?$AAp?$AAs?$AAe?$AAc?$AA_?$AAh?$AAl?$AAp?$AAr?$AA?$AA@HFIDCDCB@		; driver.obj
+1> CmRegUtilUcValueSetWstrString		; wdmsec.lib(cmregutil.obj)
+1> SepSddlLookupAccessMaskInTable		; wdmsec.lib(sesddl.obj)
+1> ??_C@_0EG@IEFBCIJH@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> ??_C@_0DL@LOJGNLKP@?$FLchipsec?$FN?5ERROR?3?5DriverEntry?3?5Io@HFIDCDCB@		; driver.obj
+1> ??_C@_1CK@MGFCEFIN@?$AA?2?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?2?$AAc?$AAh?$AAi?$AAp?$AAs?$AAe?$AAc?$AA_?$AAh?$AAl?$AAp?$AAr?$AA?$AA@HFIDCDCB@		; driver.obj
+1> MmFreeContiguousMemory		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0CL@MBDABJKH@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@		; driver.obj
+1> ??_C@_0CF@IMHLHADF@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5EBX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> SeSddlSecurityDescriptorFromSDDL		; wdmsec.lib(sesddl.obj)
+1> ??_C@_0CG@KJJPHNCG@?5?5?5?5RCX?5?$DN?50x?$CF016llX?5?5RDX?5?$DN?50x?$CF01@HFIDCDCB@		; driver.obj
+1> SepSddlGetSidForString		; wdmsec.lib(sesddl.obj)
+1> ??_C@_0DI@HFDPFEBO@?$FLchipsec?$FN?5?$DO?$DO?5DriverUnload?3?5IoDel@HFIDCDCB@		; driver.obj
+1> SepSddlParseWideStringUlong		; wdmsec.lib(sesddl.obj)
+1> IoCreateDevice		; wdmsec.lib(ntoskrnl.exe)
+1> RtlGetOwnerSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DD@KIIDPBIG@?$FLchipsec?$FN?$FLIOCTL_RDMSR?$FN?5ERROR?3?5ex@HFIDCDCB@		; driver.obj
+1> SeUtilSecurityInfoFromSecurityDescriptor		; wdmsec.lib(seutil.obj)
+1> GsDriverEntry		; BufferOverflowK.lib(gs_support.obj)
+1> ??_C@_0CF@LIHGPBLF@c?3?2winddk?27600?416385?41?2inc?2ddk?2w@FNODOBFM@		; driver.obj
+1> ??_C@_0FG@NCCGDGFH@?$FLchipsec?$FN?$FLIOCTL_GET_PHYSADDR?$FN?5Tr@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@FAOMJGJH@?5?5?5?5R8?5?5?$DN?50x?$CF016llX?5?5R9?5?5?$DN?50x?$CF01@HFIDCDCB@		; driver.obj
+1> ExFreePoolWithTag		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0FB@BCGJANJB@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@DOOJJKNH@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RDX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ??_C@_0CP@IHFHMMGC@?$FLchipsec?$FN?5?$DO?$DO?5DriverOpen?5?$CIDeviceO@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@FEAHHDCE@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RSI?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ??_C@_0DC@HBBDHBDC@?$FLchipsec?$FN?$FLREAD_CR?$FN?5CR?5Reg?5?$CF?$CD04x?0@HFIDCDCB@		; driver.obj
+1> KeBugCheckEx		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0DE@LODJIMA@?$FLchipsec?$FN?5Current?5CPU?5thread?5?5?5?5@HFIDCDCB@		; driver.obj
+1> ??_C@_0EJ@NCGALLOJ@?$FLchipsec?$FN?5ERROR?3?5DriverEntry?3?5Io@HFIDCDCB@		; driver.obj
+1> ??_C@_0EF@IFFKBIIE@?$FLchipsec?$FN?5Active?5CPU?5threads?5?5?5?5@HFIDCDCB@		; driver.obj
+1> PpRegStateInitEmptyCreationSettings		; wdmsec.lib(ppregstate.obj)
+1> ??_C@_0EH@LCBIBIPE@?$FLchipsec?$FN?$FLREAD_IO_PORT?$FN?5I?1O?5Port@HFIDCDCB@		; driver.obj
+1> SepSddlAddAceToAcl		; wdmsec.lib(sesddl.obj)
+1> ??_C@_0CK@CFKGCGGE@?$FLchipsec?$FN?5ERROR?3?5Microcode?5updat@HFIDCDCB@		; driver.obj
+1> PpRegStateLoadSecurityDescriptor		; wdmsec.lib(ppregstate.obj)
+1> PiRegStateReadStackCreationSettingsFromKey		; wdmsec.lib(ppregstate.obj)
+1> ??_C@_0CF@FBONKJLA@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5ECX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ZwSetValueKey		; wdmsec.lib(ntoskrnl.exe)
+1> IoDevObjCreateDeviceSecure		; wdmsec.lib(iodevobj.obj)
+1> ??_C@_0DP@NADNOJAB@?$FLchipsec?$FN?5Allocating?3?5NumberOfBy@HFIDCDCB@		; driver.obj
+1> PpRegStateFreeStackCreationSettings		; wdmsec.lib(ppregstate.obj)
+1> ??_C@_0DN@HDMNPMLH@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> ??_C@_0FC@FOBLPHKC@?$FLchipsec?$FN?$FLIOCTL_FREE_PHYSMEM?$FN?5Vi@HFIDCDCB@		; driver.obj
+1> CmpRegUtilAllocateUnicodeString		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0CF@GHOMCNKG@?5?5?5?5XMM0?9XMM5?5buffer?5VA?5?$DN?50x?$CF016@HFIDCDCB@		; driver.obj
+1> ??_C@_0GK@JCOCNKID@?$FLchipsec?$FN?$FLWRITE_PCI_CFG_REGISTER@HFIDCDCB@		; driver.obj
+1> CmRegUtilWstrValueSetFullBuffer		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0CG@JJCIDCLM@?5?5?5?5R10?5?$DN?50x?$CF016llX?5?5R11?5?$DN?50x?$CF01@HFIDCDCB@		; driver.obj
+1> MmGetSystemRoutineAddress		; wdmsec.lib(ntoskrnl.exe)
+1> CmRegUtilUcValueSetUcString		; wdmsec.lib(cmregutil.obj)
+1> __GSHandlerCheckCommon		; wdmsec.lib(gshandler.obj)
+1> ??_C@_0EJ@LCHEKKN@?$FLchipsec?$FN?5Irp?9?$DOIoStatus?4Status?5?$DN@HFIDCDCB@		; driver.obj
+1> ??_C@_0ED@IHHNMFDP@?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?$CF0@HFIDCDCB@		; driver.obj
+1> ??_C@_0CD@NLMEMLMJ@?$FLchipsec?$FN?5ERROR?3?5NO?5data?5provide@HFIDCDCB@		; driver.obj
+1> ??_C@_0BG@COBEFPG@?$FLchipsec?$FN?5?$DO?5WRITE_CR?6?$AA@HFIDCDCB@		; driver.obj
+1> ZwQueryValueKey		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0GI@JCONOGBE@?$FLchipsec?$FN?$FLREAD_PCI_CFG_REGISTER?$FN@HFIDCDCB@		; driver.obj
+1> ??_C@_0DO@GEDPJNGB@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@		; driver.obj
+1> ??_C@_0FN@NJFDG@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> ??_C@_0DP@KPMBENOJ@?$FLchipsec?$FN?5InputBufferLength?5?$DN?50x@HFIDCDCB@		; driver.obj
+1> ObOpenObjectByPointer		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0CH@DJPAGGNJ@?$FLchipsec?$FN?5?$DO?$DO?$DO?$DO?$DO?$DO?$DO?$DO?$DO?$DO?5IOCTL?5?$DO?$DO?$DO?$DO?$DO@HFIDCDCB@		; driver.obj
+1> SeCaptureSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> WdmlibIoValidateDeviceIoControlAccess		; wdmsec.lib(wlwrap.obj)
+1> ??_C@_0EH@BAEJACLO@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> __C_specific_handler		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0DA@NLMEBPEG@?$FLchipsec?$FN?5?$DO?$DO?5DriverClose?5?$CIDevice@HFIDCDCB@		; driver.obj
+1> ??_C@_0CJ@LEGGALKI@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5Co@HFIDCDCB@		; driver.obj
+1> ??_C@_0CF@DBLBBMPL@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5EAX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ??_C@_0BK@MHNMMKJI@?$FLchipsec?$FN?5?$DO?5READ_IO_PORT?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0CH@FKHPGPDN@?$FLchipsec?$FN?5ERROR?3?5no?5space?5for?5ma@HFIDCDCB@		; driver.obj
+1> CmRegUtilOpenExistingWstrKey		; wdmsec.lib(cmregutil.obj)
+1> RtlAddAccessAllowedAce		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DM@HNMBGKN@?$FLchipsec?$FN?$FLIOCTL_SWSMI?$FN?5SW?5SMI?5to@HFIDCDCB@		; driver.obj
+1> IoCreateSymbolicLink		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0DL@IDDKKHDO@?$FLchipsec?$FN?$FLIOCTL_WRITE_PHYSMEM?$FN?5E@HFIDCDCB@		; driver.obj
+1> RtlULongAdd		; wdmsec.lib(cmregutil.obj)
+1> IofCompleteRequest		; ntoskrnl.lib(ntoskrnl.exe)
+1> WdmlibIoCreateDeviceSecure		; wdmsec.lib(wlwrap.obj)
+1> ??_C@_0DF@FFDKAMDJ@?$FLchipsec?$FN?$FLWRITE_IO_PORT?$FN?5ERROR?3?5@HFIDCDCB@		; driver.obj
+1> RtlAssert		; ntoskrnl.lib(ntoskrnl.exe)
+1> __report_gsfailure		; BufferOverflowK.lib(gs_report.obj)
+1> IoDeleteDevice		; ntoskrnl.lib(ntoskrnl.exe)
+1> CmRegUtilOpenExistingUcKey		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0CE@OCMKJILM@?$FLchipsec?$FN?5ERROR?3?5No?5input?5provid@HFIDCDCB@		; driver.obj
+1> ??_C@_0CL@IPFCCGAI@?$FLchipsec?$FN?5Current?5CPU?5thread?5?5?5?5@HFIDCDCB@		; driver.obj
+1> ??_C@_0GG@EKBMHPDC@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> PiRegStateOpenClassKey		; wdmsec.lib(ppregstate.obj)
+1> MmGetPhysicalAddress		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_05BFHEBJNP@?$CF02X?5?$AA@HFIDCDCB@		; driver.obj
+1> DbgPrint		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0CP@IDGNKIMM@?$FLchipsec?$FN?5Active?5CPU?5mask?5?$CIKAFFI@HFIDCDCB@		; driver.obj
+1> ZwOpenKey		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DD@NOEIPJJK@?$FLchipsec?$FN?$FLWRITE_CR?$FN?5CR?5Reg?5?$CF?$CD04x@HFIDCDCB@		; driver.obj
+1> RtlLengthSid		; wdmsec.lib(ntoskrnl.exe)
+1> CmRegUtilUcValueGetFullBuffer		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0FA@JIKFFCIO@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@		; driver.obj
+1> SepSddlDaclFromSDDLString		; wdmsec.lib(sesddl.obj)
+1> ??_C@_0DK@JHLPKFLK@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5ER@HFIDCDCB@		; driver.obj
+1> ??_C@_0DJ@CCPBIJKF@?$FLchipsec?$FN?$FLREAD_IO_PORT?$FN?5ERROR?3?5S@HFIDCDCB@		; driver.obj
+1> ??_C@_0FP@GLJGPLBC@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@		; driver.obj
+1> ??_C@_0DF@BLBPOCHJ@?$FLchipsec?$FN?$FLIOCTL_RDMSR?$FN?5RDMSR?$CI?50x@HFIDCDCB@		; driver.obj
+1> ??_C@_0DF@FFOLLCHF@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5WRMSR?$CI?50x@HFIDCDCB@		; driver.obj
+1> ??_C@_0BJ@JHNKLAIL@?$FLchipsec?$FN?5?$DO?5IOCTL_SWSMI?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0CA@CENEFLFF@?$FLchipsec?$FN?5?$DO?5IOCTL_READ_PHYSMEM?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0DN@PBEAAFNH@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> ??_C@_0EJ@FDLNFLP@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@		; driver.obj
+1> CmRegUtilCreateWstrKey		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0DL@CLJFLFLF@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@		; driver.obj
+1> MmAllocateContiguousMemory		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0CG@FLCEDABH@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RCX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ??_C@_0DK@BIBLDNJ@?$FLchipsec?$FN?5ERROR?3?5couldn?8t?5alloca@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@LKEKPELK@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RAX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> __GSHandlerCheck		; wdmsec.lib(gshandler.obj)
+1> ??_C@_0FA@PCGKDJCJ@?$FLchipsec?$FN?5reading?5?$CFd?5bytes?5from?5@HFIDCDCB@		; driver.obj
+1> ??_C@_0EK@MMMFPIDF@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@		; driver.obj
+1> RtlCreateSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> _snwprintf		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DB@ELKILKAL@?$FLchipsec?$FN?$FLIOCTL_RDMSR?$FN?5Changed?5C@HFIDCDCB@		; driver.obj
+1> ??_C@_0EI@OEGOKPAH@?$FLchipsec?$FN?5ERROR?3?5STATUS_BUFFER_T@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@CDIGGGPA@?5?5?5?5RDI?5?$DN?50x?$CF016llX?5?5RSI?5?$DN?50x?$CF01@HFIDCDCB@		; driver.obj
+1> ??_C@_0BJ@EMDNEAPF@?$FLchipsec?$FN?5?$DO?5IOCTL_WRMSR?6?$AA@HFIDCDCB@		; driver.obj
+1> PpRegStateUpdateStackCreationSettings		; wdmsec.lib(ppregstate.obj)
+1> WdmlibInit		; wdmsec.lib(wlwrap.obj)
+1> CmRegUtilWstrValueSetUcString		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0CE@BJODNMKH@?$FLchipsec?$FN?5?$DO?5WRITE_PCI_CFG_REGIST@HFIDCDCB@		; driver.obj
+1> ??_C@_0DK@HGELIPHI@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@		; driver.obj
+1> CmpRegUtilFreeAllocatedUnicodeString		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0L@FKDMGJNB@?$FLchipsec?$FN?6?$AA@HFIDCDCB@		; driver.obj
+1> CmRegUtilWstrValueGetFullBuffer		; wdmsec.lib(cmregutil.obj)
+1> RtlInitUnicodeString		; ntoskrnl.lib(ntoskrnl.exe)
+1> CmRegUtilCreateUcKey		; wdmsec.lib(cmregutil.obj)
+1> ??_C@_0CG@FCFBJKDL@?$FLchipsec?$FN?5?$DO?5GET_CPU_DESCRIPTOR_T@HFIDCDCB@		; driver.obj
+1> ??_C@_0CD@NBLMBFMG@?$FLchipsec?$FN?5?$DO?5READ_PCI_CFG_REGISTE@HFIDCDCB@		; driver.obj
+1> ??_C@_0DB@LLIJMMCO@?$FLchipsec?$FN?5?$DO?$DO?5DriverUnload?5?$CIDrive@HFIDCDCB@		; driver.obj
+1> ??_C@_0DP@CGIKIFPK@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5ER@HFIDCDCB@		; driver.obj
+1> IopDevObjAdjustNewDeviceParameters		; wdmsec.lib(iodevobj.obj)
+1> ??_C@_0CM@MPFCDOOE@?$FLchipsec?$FN?5DeviceObject?5?$DN?50x?$CFx?5IO@HFIDCDCB@		; driver.obj
+1> ??_C@_0CM@LOONDNKF@Irp?9?$DOCurrentLocation?5?$DM?$DN?5Irp?9?$DOSta@FNODOBFM@		; driver.obj
+1> ??_C@_0BJ@MLIKIONE@?$FLchipsec?$FN?5?$DO?5IOCTL_RDMSR?6?$AA@HFIDCDCB@		; driver.obj
+1> IopDevObjApplyPostCreationSettings		; wdmsec.lib(iodevobj.obj)
+1> MmMapIoSpace		; ntoskrnl.lib(ntoskrnl.exe)
+1> IoIsWdmVersionAvailable		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_03OFAPEBGM@?$CFs?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@MGCLNBGB@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RBX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ??_C@_0FA@CNEGJIKE@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@		; driver.obj
+1> RtlLengthSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> RtlGetGroupSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> __security_init_cookie		; BufferOverflowK.lib(gs_support.obj)
+1> ??_C@_0DE@NAIHJOJB@?$FLchipsec?$FN?$FLREAD_IO_PORT?$FN?5ERROR?3?5e@HFIDCDCB@		; driver.obj
+1> RtlAbsoluteToSelfRelativeSD		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DO@FKMEPEIO@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5ER@HFIDCDCB@		; driver.obj
+1> WdmlibRtlInitUnicodeStringEx		; wdmsec.lib(wlwrap.obj)
+1> ??_C@_0BL@NEKGNDDD@?$FLchipsec?$FN?5?$DO?5WRITE_IO_PORT?6?$AA@HFIDCDCB@		; driver.obj
+1> ZwCreateKey		; wdmsec.lib(ntoskrnl.exe)
+1> SepSddlSecurityDescriptorFromSDDLString		; wdmsec.lib(sesddl.obj)
+1> ExAllocatePoolWithTag		; ntoskrnl.lib(ntoskrnl.exe)
+1> MmUnmapIoSpace		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0DH@DABPHIKO@?$FLchipsec?$FN?$FLIOCTL_HYPERCALL?$FN?5ERROR@HFIDCDCB@		; driver.obj
+1> IoDeleteSymbolicLink		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0BF@DPMKFNED@?$FLchipsec?$FN?5?$DO?5READ_CR?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@JHOLDFCE@?5?5?5?5RAX?5?$DN?50x?$CF016llX?5?5RBX?5?$DN?50x?$CF01@HFIDCDCB@		; driver.obj
+1> ??_C@_0DA@FEEGNJCD@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5ERROR?3?5NO@HFIDCDCB@		; driver.obj
+1> ??_C@_0CA@CNPKNBPN@?$FLchipsec?$FN?5?$DO?5IOCTL_MAP_IO_SPACE?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0CF@CMJOKPOI@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5EDX?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ZwSetSecurityObject		; wdmsec.lib(ntoskrnl.exe)
+1> sprintf		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0EI@DFFEIJLA@?$FLchipsec?$FN?$FLWRITE_IO_PORT?$FN?5I?1O?5Por@HFIDCDCB@		; driver.obj
+1> ??_C@_0CF@DOOGAGHA@?$FLchipsec?$FN?5?$DO?5IOCTL_LOAD_UCODE_UPD@HFIDCDCB@		; driver.obj
+1> PpRegStateReadCreateClassCreationSettings		; wdmsec.lib(ppregstate.obj)
+1> ??_C@_0ED@OMMKMCPJ@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@		; driver.obj
+1> ??_C@_0BP@FCCABOOJ@?$FLchipsec?$FN?$FLIOCTL_CPUID?$FN?5CPUID?3?6?$AA@HFIDCDCB@		; driver.obj
+1> RtlFreeUnicodeString		; wdmsec.lib(ntoskrnl.exe)
+1> RtlGetSaclSecurityDescriptor		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0CA@MBBDEHOB@?$FLchipsec?$FN?5?$DO?5IOCTL_GET_PHYSADDR?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0EO@OBNPAJPN@?$FLchipsec?$FN?5writing?5?$CFd?5bytes?5to?5ph@HFIDCDCB@		; driver.obj
+1> ??_C@_0CG@FHHIOFII@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RDI?5?$DN?50x?$CF@HFIDCDCB@		; driver.obj
+1> ??_C@_0FH@DGDPFAEG@?$FLchipsec?$FN?$FLIOCTL_MAP_IO_SPACE?$FN?5Ma@HFIDCDCB@		; driver.obj
+1> CmRegUtilWstrValueGetDword		; wdmsec.lib(cmregutil.obj)
+1> KeQueryActiveProcessors		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0BJ@OFPLONFJ@?$FLchipsec?$FN?5?$DO?5IOCTL_CPUID?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0FP@KDLKFHGD@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@		; driver.obj
+1> ??_C@_0EE@OLINGGDL@?$FLchipsec?$FN?5Allocated?5Buffer?3?5Virt@HFIDCDCB@		; driver.obj
+1> ??_C@_0CH@NPALMKGD@?$FLchipsec?$FN?$FLIOCTL_HYPERCALL?$FN?5HYPER@HFIDCDCB@		; driver.obj
+1> ??_C@_0EA@BLFFFBN@?$FLchipsec?$FN?$FLIOCTL_WRITE_PHYSMEM?$FN?5E@HFIDCDCB@		; driver.obj
+1> __GSHandlerCheck_SEH		; ntoskrnl.lib(gshandlerseh.obj)
+1> CmRegUtilUcValueSetFullBuffer		; wdmsec.lib(cmregutil.obj)
+1> ZwClose		; wdmsec.lib(ntoskrnl.exe)
+1> ??_C@_0DI@DLLPMLIJ@?$FLchipsec?$FN?5Restored?5active?5CPU?5ma@HFIDCDCB@		; driver.obj
+1> ??_C@_0CB@MDGOEPDP@?$FLchipsec?$FN?5?$DO?5IOCTL_ALLOC_PHYSMEM?6@HFIDCDCB@		; driver.obj
+1> ??_C@_0BN@OJHMCJNG@?$FLchipsec?$FN?5?$DO?5IOCTL_HYPERCALL?6?$AA@HFIDCDCB@		; driver.obj
+1> ??_C@_0DD@BBDMEKPL@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5ERROR?3?5ex@HFIDCDCB@		; driver.obj
+1> _wcsnicmp		; wdmsec.lib(ntoskrnl.exe)
+1> KeQueryActiveProcessorCount		; ntoskrnl.lib(ntoskrnl.exe)
+1> ??_C@_0DB@PCIGBAOC@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5Changed?5C@HFIDCDCB@		; driver.obj
+1> CmRegUtilUcValueGetDword		; wdmsec.lib(cmregutil.obj)
+1> KeSetSystemAffinityThread		; ntoskrnl.lib(ntoskrnl.exe)
+1>Finished processing /ORDER options
+1> Discarded "`string'" (??_C@_13JGCMLPCH@?$AA1?$AA?$AA@) from wdmsec.lib(ppregstate.obj)
+1> Discarded "`string'" (??_C@_13MKMNOPIJ@?$AAD?$AA?$AA@) from wdmsec.lib(sesddl.obj)
+1> Discarded "`string'" (??_C@_13BFLGCPEB@?$AAP?$AA?$AA@) from wdmsec.lib(sesddl.obj)
+1> Discarded '.xdata' from wdmsec.lib(wlwrap.obj)
+1> Discarded '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Discarded '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Discarded '.pdata' from wdmsec.lib(wlwrap.obj)
+1> Discarded '.pdata' from wdmsec.lib(cmregutil.obj)
+1> Discarded '.pdata' from wdmsec.lib(cmregutil.obj)
+1> Discarded sprintf from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded ExAllocatePoolWithTag from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded KeQueryActiveProcessors from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded KeQueryActiveProcessorCount from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded IoDeleteSymbolicLink from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded ExFreePoolWithTag from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded RtlInitUnicodeString from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded IoDeleteDevice from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded MmFreeContiguousMemory from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded MmUnmapIoSpace from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded MmGetPhysicalAddress from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded MmMapIoSpace from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded IofCompleteRequest from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded IoCreateSymbolicLink from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded KeSetSystemAffinityThread from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded RtlAssert from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded MmAllocateContiguousMemory from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded KeBugCheckEx from ntoskrnl.lib(ntoskrnl.exe)
+1> Discarded WdmlibIoValidateDeviceIoControlAccess from wdmsec.lib(wlwrap.obj)
+1> Discarded MmGetSystemRoutineAddress from wdmsec.lib(ntoskrnl.exe)
+1> Discarded IoCreateDevice from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ZwClose from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ObOpenObjectByPointer from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ZwSetSecurityObject from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlULongAdd from wdmsec.lib(cmregutil.obj)
+1> Discarded RtlLengthSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded SeCaptureSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlCreateSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlSetDaclSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlAbsoluteToSelfRelativeSD from wdmsec.lib(ntoskrnl.exe)
+1> Discarded IoIsWdmVersionAvailable from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlLengthSid from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlAddAccessAllowedAce from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlGetSaclSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlGetDaclSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlGetGroupSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlGetOwnerSecurityDescriptor from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ZwOpenKey from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ZwCreateKey from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ZwQueryValueKey from wdmsec.lib(ntoskrnl.exe)
+1> Discarded ZwSetValueKey from wdmsec.lib(ntoskrnl.exe)
+1> Discarded RtlFreeUnicodeString from wdmsec.lib(ntoskrnl.exe)
+1> Discarded IopDevObjAdjustNewDeviceParameters from wdmsec.lib(iodevobj.obj)
+1> Discarded CmpRegUtilFreeAllocatedUnicodeString from wdmsec.lib(cmregutil.obj)
+1> Discarded CmRegUtilUcValueSetFullBuffer from wdmsec.lib(cmregutil.obj)
+1> Discarded CmRegUtilUcValueSetWstrString from wdmsec.lib(cmregutil.obj)
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(gshandler.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(ppregstate.obj)
+1> '.xdata' from BufferOverflowK.lib(gs_support.obj)
+1> Selected symbol:
+1> '.xdata' from BufferOverflowK.lib(gs_report.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(wlwrap.obj)
+1> Selected symbol:
+1> '.xdata' from driver.obj
+1> Replaced symbol(s):
+1> '.xdata' from driver.obj
+1> Selected symbol:
+1> '.xdata' from driver.obj
+1> Replaced symbol(s):
+1> '.xdata' from driver.obj
+1> '.xdata' from driver.obj
+1> '.xdata' from driver.obj
+1> '.xdata' from driver.obj
+1> '.xdata' from driver.obj
+1> '.xdata' from driver.obj
+1> '.xdata' from driver.obj
+1> Selected symbol:
+1> '.xdata' from driver.obj
+1> Replaced symbol(s):
+1> '.xdata' from driver.obj
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(gshandler.obj)
+1> Selected symbol:
+1> '.xdata' from driver.obj
+1> Replaced symbol(s):
+1> '.xdata' from driver.obj
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(ppregstate.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(sesddl.obj)
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(cmregutil.obj)
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(sesddl.obj)
+1> Replaced symbol(s):
+1> '.xdata' from wdmsec.lib(sesddl.obj)
+1> Selected symbol:
+1> '.xdata' from wdmsec.lib(sesddl.obj)
+1> Replaced symbol(s):
+1> '.xdata' from ntoskrnl.lib(gshandlerseh.obj)
+1> ICF total savings: 212 bytes
+1>Starting pass 2
+1> CIL library( CIL module)
+1> chipsec_hlpr.res
+1> cpu.obj
+1> hotpatch.obj
+1> BufferOverflowK.lib(amdsecgs.obj)
+1> BufferOverflowK.lib(gs_support.obj)
+1> BufferOverflowK.lib(gs_report.obj)
+1> ntoskrnl.lib(gshandlerseh.obj)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> ntoskrnl.lib(ntoskrnl.exe)
+1> wdmsec.lib(memset.obj)
+1> wdmsec.lib(memcpy.obj)
+1> wdmsec.lib(gshandler.obj)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(ntoskrnl.exe)
+1> wdmsec.lib(wlwrap.obj)
+1> wdmsec.lib(seutil.obj)
+1> wdmsec.lib(sesddl.obj)
+1> wdmsec.lib(ppregstate.obj)
+1> wdmsec.lib(iosddl.obj)
+1> wdmsec.lib(iodevobj.obj)
+1> wdmsec.lib(cmregutil.obj)
+1>Finished pass 2

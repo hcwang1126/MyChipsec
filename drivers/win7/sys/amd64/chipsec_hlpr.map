@@ -1,0 +1,371 @@
+ chipsec_hlpr
+
+ Timestamp is 5b8654fa (Wed Aug 29 16:10:34 2018)
+
+ Preferred load address is 0000000000010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000070cH .text                   CODE
+ 0001:00000710 0000005cH .text$s                 CODE
+ 0002:00000000 00000219H chipsec_code$__a        CODE
+ 0002:00000220 00002ee1H chipsec_code$__c        CODE
+ 0002:00003110 00001c6bH chipsec_code$__c$s      CODE
+ 0002:00004d80 0000010dH chipsec_code$x          CODE
+ 0003:00000000 00000188H .idata$5                DATA
+ 0003:00000190 0000058cH .rdata                  DATA
+ 0003:0000071c 0000004dH .rdata$debug            DATA
+ 0003:00000770 000002fcH .xdata                  DATA
+ 0004:00000000 000002e0H .data                   DATA
+ 0004:000002e0 0000001cH .bss                    DATA
+ 0005:00000000 000002d0H .pdata                  DATA
+ 0006:00000000 00001a47H PAGE                    CODE
+ 0007:00000000 00000082H INIT                    CODE
+ 0007:00000084 00000014H .idata$2                CODE
+ 0007:00000098 00000014H .idata$3                CODE
+ 0007:000000b0 00000188H .idata$4                CODE
+ 0007:00000238 0000042cH .idata$6                CODE
+ 0008:00000000 00000010H .rsrc$01                DATA
+ 0008:00000010 00000000H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       __ImageBase                0000000000010000     <linker-defined>
+ 0001:00000010       IoGetCurrentIrpStackLocation 0000000000011010 f i driver.obj
+ 0001:00000080       KeGetCurrentProcessorNumber 0000000000011080 f i driver.obj
+ 0001:000000a0       __security_check_cookie    00000000000110a0 f   BufferOverflowK:amdsecgs.obj
+ 0001:000000c8       __report_gsfailure         00000000000110c8 f   BufferOverflowK:gs_report.obj
+ 0001:000000f6       DbgPrint                   00000000000110f6 f   ntoskrnl:ntoskrnl.exe
+ 0001:00000104       WdmlibRtlInitUnicodeStringEx 0000000000011104 f   wdmsec:wlwrap.obj
+ 0001:00000164       _snwprintf                 0000000000011164 f   wdmsec:ntoskrnl.exe
+ 0001:00000170       __GSHandlerCheckCommon     0000000000011170 f   wdmsec:gshandler.obj
+ 0001:000001dc       __GSHandlerCheck           00000000000111dc f   wdmsec:gshandler.obj
+ 0001:00000200       wcschr                     0000000000011200 f   wdmsec:ntoskrnl.exe
+ 0001:0000020c       _wcsnicmp                  000000000001120c f   wdmsec:ntoskrnl.exe
+ 0001:00000230       memset                     0000000000011230 f   wdmsec:memset.obj
+ 0001:00000330       memcpy                     0000000000011330 f   wdmsec:memcpy.obj
+ 0001:00000330       memmove                    0000000000011330     wdmsec:memcpy.obj
+ 0001:0000066c       __GSHandlerCheck_SEH       000000000001166c f   ntoskrnl:gshandlerseh.obj
+ 0001:00000706       __C_specific_handler       0000000000011706 f   ntoskrnl:ntoskrnl.exe
+ 0001:00000710       ??_C@_0CF@LIHGPBLF@c?3?2winddk?27600?416385?41?2inc?2ddk?2w@FNODOBFM@ 0000000000011710     driver.obj
+ 0001:00000740       ??_C@_0CM@LOONDNKF@Irp?9?$DOCurrentLocation?5?$DM?$DN?5Irp?9?$DOSta@FNODOBFM@ 0000000000011740     driver.obj
+ 0002:00000010       _rflags                    0000000000012010 f   cpu.obj
+ 0002:00000013       _store_idtr                0000000000012013 f   cpu.obj
+ 0002:00000017       _load_idtr                 0000000000012017 f   cpu.obj
+ 0002:0000001b       _store_gdtr                000000000001201b f   cpu.obj
+ 0002:0000001f       _load_gdtr                 000000000001201f f   cpu.obj
+ 0002:00000023       _store_ldtr                0000000000012023 f   cpu.obj
+ 0002:00000024       _load_ldtr                 0000000000012024 f   cpu.obj
+ 0002:00000025       _load_gdt                  0000000000012025 f   cpu.obj
+ 0002:0000002c       _rdmsr                     000000000001202c f   cpu.obj
+ 0002:00000047       _wrmsr                     0000000000012047 f   cpu.obj
+ 0002:0000004f       DisableInterrupts          000000000001204f f   cpu.obj
+ 0002:00000051       WritePortDword             0000000000012051 f   cpu.obj
+ 0002:00000059       WritePortWord              0000000000012059 f   cpu.obj
+ 0002:00000061       WritePortByte              0000000000012061 f   cpu.obj
+ 0002:00000068       ReadPortDword              0000000000012068 f   cpu.obj
+ 0002:00000072       ReadPortWord               0000000000012072 f   cpu.obj
+ 0002:0000007d       ReadPortByte               000000000001207d f   cpu.obj
+ 0002:00000087       WriteHighCMOSByte          0000000000012087 f   cpu.obj
+ 0002:00000094       WriteLowCMOSByte           0000000000012094 f   cpu.obj
+ 0002:000000a3       SendAPMSMI                 00000000000120a3 f   cpu.obj
+ 0002:000000b1       _swsmi                     00000000000120b1 f   cpu.obj
+ 0002:000000d6       WritePCIByte               00000000000120d6 f   cpu.obj
+ 0002:000000ea       WritePCIWord               00000000000120ea f   cpu.obj
+ 0002:000000ff       WritePCIDword              00000000000120ff f   cpu.obj
+ 0002:00000113       ReadPCIByte                0000000000012113 f   cpu.obj
+ 0002:00000125       ReadPCIWord                0000000000012125 f   cpu.obj
+ 0002:00000138       ReadPCIDword               0000000000012138 f   cpu.obj
+ 0002:0000014a       ReadCR0                    000000000001214a f   cpu.obj
+ 0002:00000151       ReadCR2                    0000000000012151 f   cpu.obj
+ 0002:00000158       ReadCR3                    0000000000012158 f   cpu.obj
+ 0002:0000015f       ReadCR4                    000000000001215f f   cpu.obj
+ 0002:00000166       ReadCR8                    0000000000012166 f   cpu.obj
+ 0002:0000016e       WriteCR0                   000000000001216e f   cpu.obj
+ 0002:00000172       WriteCR2                   0000000000012172 f   cpu.obj
+ 0002:00000176       WriteCR3                   0000000000012176 f   cpu.obj
+ 0002:0000017a       WriteCR4                   000000000001217a f   cpu.obj
+ 0002:0000017e       WriteCR8                   000000000001217e f   cpu.obj
+ 0002:00000183       hypercall                  0000000000012183 f   cpu.obj
+ 0002:00000215       hypercall_page             0000000000012215 f   cpu.obj
+ 0002:00000230       ReadPCICfg                 0000000000012230 f   driver.obj
+ 0002:00000310       WritePCICfg                0000000000012310 f   driver.obj
+ 0002:000003e0       WriteIOPort                00000000000123e0 f   driver.obj
+ 0002:00000460       ReadIOPort                 0000000000012460 f   driver.obj
+ 0002:000004d0       _dump_buffer               00000000000124d0 f   driver.obj
+ 0002:00000870       DriverEntry                0000000000012870 f   driver.obj
+ 0002:000009d0       DriverOpen                 00000000000129d0 f   driver.obj
+ 0002:00000a30       DriverClose                0000000000012a30 f   driver.obj
+ 0002:00000a90       DriverUnload               0000000000012a90 f   driver.obj
+ 0002:00000b10       _read_phys_mem             0000000000012b10 f   driver.obj
+ 0002:00000bb0       _write_phys_mem            0000000000012bb0 f   driver.obj
+ 0002:00000c50       DriverDeviceControl        0000000000012c50 f   driver.obj
+ 0002:00003110       ??_C@_0ED@IHHNMFDP@?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?$CF0@HFIDCDCB@ 0000000000015110     driver.obj
+ 0002:00003160       ??_C@_05BFHEBJNP@?$CF02X?5?$AA@HFIDCDCB@ 0000000000015160     driver.obj
+ 0002:00003170       ??_C@_03OFAPEBGM@?$CFs?6?$AA@HFIDCDCB@ 0000000000015170     driver.obj
+ 0002:00003180       ??_C@_1CK@MGFCEFIN@?$AA?2?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?2?$AAc?$AAh?$AAi?$AAp?$AAs?$AAe?$AAc?$AA_?$AAh?$AAl?$AAp?$AAr?$AA?$AA@HFIDCDCB@ 0000000000015180     driver.obj
+ 0002:000031b0       ??_C@_0EJ@NCGALLOJ@?$FLchipsec?$FN?5ERROR?3?5DriverEntry?3?5Io@HFIDCDCB@ 00000000000151b0     driver.obj
+ 0002:00003200       ??_C@_1DC@EBFHNAIH@?$AA?2?$AAD?$AAo?$AAs?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAs?$AA?2?$AAc?$AAh?$AAi?$AAp?$AAs?$AAe?$AAc?$AA_?$AAh?$AAl?$AAp?$AAr?$AA?$AA@HFIDCDCB@ 0000000000015200     driver.obj
+ 0002:00003240       ??_C@_0DL@LOJGNLKP@?$FLchipsec?$FN?5ERROR?3?5DriverEntry?3?5Io@HFIDCDCB@ 0000000000015240     driver.obj
+ 0002:00003280       ??_C@_0CP@IHFHMMGC@?$FLchipsec?$FN?5?$DO?$DO?5DriverOpen?5?$CIDeviceO@HFIDCDCB@ 0000000000015280     driver.obj
+ 0002:000032b0       ??_C@_0DA@NLMEBPEG@?$FLchipsec?$FN?5?$DO?$DO?5DriverClose?5?$CIDevice@HFIDCDCB@ 00000000000152b0     driver.obj
+ 0002:000032e0       ??_C@_0DB@LLIJMMCO@?$FLchipsec?$FN?5?$DO?$DO?5DriverUnload?5?$CIDrive@HFIDCDCB@ 00000000000152e0     driver.obj
+ 0002:00003320       ??_C@_0DI@HFDPFEBO@?$FLchipsec?$FN?5?$DO?$DO?5DriverUnload?3?5IoDel@HFIDCDCB@ 0000000000015320     driver.obj
+ 0002:00003360       ??_C@_0CH@FKHPGPDN@?$FLchipsec?$FN?5ERROR?3?5no?5space?5for?5ma@HFIDCDCB@ 0000000000015360     driver.obj
+ 0002:00003390       ??_C@_0FA@PCGKDJCJ@?$FLchipsec?$FN?5reading?5?$CFd?5bytes?5from?5@HFIDCDCB@ 0000000000015390     driver.obj
+ 0002:000033e0       ??_C@_0EO@OBNPAJPN@?$FLchipsec?$FN?5writing?5?$CFd?5bytes?5to?5ph@HFIDCDCB@ 00000000000153e0     driver.obj
+ 0002:00003430       ??_C@_0CH@DJPAGGNJ@?$FLchipsec?$FN?5?$DO?$DO?$DO?$DO?$DO?$DO?$DO?$DO?$DO?$DO?5IOCTL?5?$DO?$DO?$DO?$DO?$DO@HFIDCDCB@ 0000000000015430     driver.obj
+ 0002:00003460       ??_C@_0CM@MPFCDOOE@?$FLchipsec?$FN?5DeviceObject?5?$DN?50x?$CFx?5IO@HFIDCDCB@ 0000000000015460     driver.obj
+ 0002:00003490       ??_C@_0DP@KPMBENOJ@?$FLchipsec?$FN?5InputBufferLength?5?$DN?50x@HFIDCDCB@ 0000000000015490     driver.obj
+ 0002:000034d0       ??_C@_0EF@IFFKBIIE@?$FLchipsec?$FN?5Active?5CPU?5threads?5?5?5?5@HFIDCDCB@ 00000000000154d0     driver.obj
+ 0002:00003520       ??_C@_0CP@IDGNKIMM@?$FLchipsec?$FN?5Active?5CPU?5mask?5?$CIKAFFI@HFIDCDCB@ 0000000000015520     driver.obj
+ 0002:00003550       ??_C@_0CL@IPFCCGAI@?$FLchipsec?$FN?5Current?5CPU?5thread?5?5?5?5@HFIDCDCB@ 0000000000015550     driver.obj
+ 0002:00003580       ??_C@_0CD@NBLMBFMG@?$FLchipsec?$FN?5?$DO?5READ_PCI_CFG_REGISTE@HFIDCDCB@ 0000000000015580     driver.obj
+ 0002:000035b0       ??_C@_0CL@MBDABJKH@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@ 00000000000155b0     driver.obj
+ 0002:000035e0       ??_C@_0GI@JCONOGBE@?$FLchipsec?$FN?$FLREAD_PCI_CFG_REGISTER?$FN@HFIDCDCB@ 00000000000155e0     driver.obj
+ 0002:00003650       ??_C@_0CE@BJODNMKH@?$FLchipsec?$FN?5?$DO?5WRITE_PCI_CFG_REGIST@HFIDCDCB@ 0000000000015650     driver.obj
+ 0002:00003680       ??_C@_0GK@JCOCNKID@?$FLchipsec?$FN?$FLWRITE_PCI_CFG_REGISTER@HFIDCDCB@ 0000000000015680     driver.obj
+ 0002:000036f0       ??_C@_0CA@CENEFLFF@?$FLchipsec?$FN?5?$DO?5IOCTL_READ_PHYSMEM?6?$AA@HFIDCDCB@ 00000000000156f0     driver.obj
+ 0002:00003710       ??_C@_0DP@CGIKIFPK@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5ER@HFIDCDCB@ 0000000000015710     driver.obj
+ 0002:00003750       ??_C@_0DO@FKMEPEIO@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5ER@HFIDCDCB@ 0000000000015750     driver.obj
+ 0002:00003790       ??_C@_0DK@JHLPKFLK@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5ER@HFIDCDCB@ 0000000000015790     driver.obj
+ 0002:000037d0       ??_C@_0CJ@LEGGALKI@?$FLchipsec?$FN?$FLIOCTL_READ_PHYSMEM?$FN?5Co@HFIDCDCB@ 00000000000157d0     driver.obj
+ 0002:00003800       ??_C@_0CB@IAMPFNMM@?$FLchipsec?$FN?5?$DO?5IOCTL_WRITE_PHYSMEM?6@HFIDCDCB@ 0000000000015800     driver.obj
+ 0002:00003830       ??_C@_0EA@BLFFFBN@?$FLchipsec?$FN?$FLIOCTL_WRITE_PHYSMEM?$FN?5E@HFIDCDCB@ 0000000000015830     driver.obj
+ 0002:00003870       ??_C@_0DC@ODJOBENL@?$FLchipsec?$FN?$FLIOCTL_WRITE_PHYSMEM?$FN?5W@HFIDCDCB@ 0000000000015870     driver.obj
+ 0002:000038b0       ??_C@_0DL@IDDKKHDO@?$FLchipsec?$FN?$FLIOCTL_WRITE_PHYSMEM?$FN?5E@HFIDCDCB@ 00000000000158b0     driver.obj
+ 0002:000038f0       ??_C@_0CB@MDGOEPDP@?$FLchipsec?$FN?5?$DO?5IOCTL_ALLOC_PHYSMEM?6@HFIDCDCB@ 00000000000158f0     driver.obj
+ 0002:00003920       ??_C@_0DP@NADNOJAB@?$FLchipsec?$FN?5Allocating?3?5NumberOfBy@HFIDCDCB@ 0000000000015920     driver.obj
+ 0002:00003960       ??_C@_0EC@DMBIDFOB@?$FLchipsec?$FN?5ERROR?3?5STATUS_UNSUCCES@HFIDCDCB@ 0000000000015960     driver.obj
+ 0002:000039b0       ??_C@_0EI@ECBDKJBJ@?$FLchipsec?$FN?5ERROR?3?5STATUS_BUFFER_T@HFIDCDCB@ 00000000000159b0     driver.obj
+ 0002:00003a00       ??_C@_0EE@OLINGGDL@?$FLchipsec?$FN?5Allocated?5Buffer?3?5Virt@HFIDCDCB@ 0000000000015a00     driver.obj
+ 0002:00003a50       ??_C@_0CA@FADGKMBP@?$FLchipsec?$FN?5?$DO?5IOCTL_FREE_PHYSMEM?6?$AA@HFIDCDCB@ 0000000000015a50     driver.obj
+ 0002:00003a70       ??_C@_0FC@FOBLPHKC@?$FLchipsec?$FN?$FLIOCTL_FREE_PHYSMEM?$FN?5Vi@HFIDCDCB@ 0000000000015a70     driver.obj
+ 0002:00003ad0       ??_C@_0CA@MBBDEHOB@?$FLchipsec?$FN?5?$DO?5IOCTL_GET_PHYSADDR?6?$AA@HFIDCDCB@ 0000000000015ad0     driver.obj
+ 0002:00003af0       ??_C@_0CK@FIHFKOIA@?$FLchipsec?$FN?5ERROR?3?5STATUS_BUFFER_T@HFIDCDCB@ 0000000000015af0     driver.obj
+ 0002:00003b20       ??_C@_0FG@NCCGDGFH@?$FLchipsec?$FN?$FLIOCTL_GET_PHYSADDR?$FN?5Tr@HFIDCDCB@ 0000000000015b20     driver.obj
+ 0002:00003b80       ??_C@_0CA@CNPKNBPN@?$FLchipsec?$FN?5?$DO?5IOCTL_MAP_IO_SPACE?6?$AA@HFIDCDCB@ 0000000000015b80     driver.obj
+ 0002:00003ba0       ??_C@_0FH@DGDPFAEG@?$FLchipsec?$FN?$FLIOCTL_MAP_IO_SPACE?$FN?5Ma@HFIDCDCB@ 0000000000015ba0     driver.obj
+ 0002:00003c00       ??_C@_0CF@DOOGAGHA@?$FLchipsec?$FN?5?$DO?5IOCTL_LOAD_UCODE_UPD@HFIDCDCB@ 0000000000015c00     driver.obj
+ 0002:00003c30       ??_C@_0ED@OMMKMCPJ@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@ 0000000000015c30     driver.obj
+ 0002:00003c80       ??_C@_0DN@PBEAAFNH@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015c80     driver.obj
+ 0002:00003cc0       ??_C@_0DN@HDMNPMLH@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015cc0     driver.obj
+ 0002:00003d00       ??_C@_0FA@CNEGJIKE@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@ 0000000000015d00     driver.obj
+ 0002:00003d50       ??_C@_0DK@BIBLDNJ@?$FLchipsec?$FN?5ERROR?3?5couldn?8t?5alloca@HFIDCDCB@ 0000000000015d50     driver.obj
+ 0002:00003d90       ??_C@_0FN@NJFDG@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015d90     driver.obj
+ 0002:00003df0       ??_C@_0DL@CLJFLFLF@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015df0     driver.obj
+ 0002:00003e30       ??_C@_0EH@BAEJACLO@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015e30     driver.obj
+ 0002:00003e80       ??_C@_0GG@EKBMHPDC@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015e80     driver.obj
+ 0002:00003ef0       ??_C@_0FB@BCGJANJB@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015ef0     driver.obj
+ 0002:00003f50       ??_C@_0EG@IEFBCIJH@?$FLchipsec?$FN?$FLIOCTL_LOAD_UCODE_UPDAT@HFIDCDCB@ 0000000000015f50     driver.obj
+ 0002:00003fa0       ??_C@_0CK@CFKGCGGE@?$FLchipsec?$FN?5ERROR?3?5Microcode?5updat@HFIDCDCB@ 0000000000015fa0     driver.obj
+ 0002:00003fd0       ??_C@_0BJ@EMDNEAPF@?$FLchipsec?$FN?5?$DO?5IOCTL_WRMSR?6?$AA@HFIDCDCB@ 0000000000015fd0     driver.obj
+ 0002:00003ff0       ??_C@_0DA@FEEGNJCD@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5ERROR?3?5NO@HFIDCDCB@ 0000000000015ff0     driver.obj
+ 0002:00004020       ??_C@_0GO@HHOMJFME@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5ERROR?3?5ST@HFIDCDCB@ 0000000000016020     driver.obj
+ 0002:00004090       ??_C@_0DB@PCIGBAOC@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5Changed?5C@HFIDCDCB@ 0000000000016090     driver.obj
+ 0002:000040d0       ??_C@_0DF@FFOLLCHF@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5WRMSR?$CI?50x@HFIDCDCB@ 00000000000160d0     driver.obj
+ 0002:00004110       ??_C@_0DD@BBDMEKPL@?$FLchipsec?$FN?$FLIOCTL_WRMSR?$FN?5ERROR?3?5ex@HFIDCDCB@ 0000000000016110     driver.obj
+ 0002:00004150       ??_C@_0BJ@MLIKIONE@?$FLchipsec?$FN?5?$DO?5IOCTL_RDMSR?6?$AA@HFIDCDCB@ 0000000000016150     driver.obj
+ 0002:00004170       ??_C@_0CE@OCMKJILM@?$FLchipsec?$FN?5ERROR?3?5No?5input?5provid@HFIDCDCB@ 0000000000016170     driver.obj
+ 0002:000041a0       ??_C@_0FP@KDLKFHGD@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@ 00000000000161a0     driver.obj
+ 0002:00004200       ??_C@_0DB@ELKILKAL@?$FLchipsec?$FN?$FLIOCTL_RDMSR?$FN?5Changed?5C@HFIDCDCB@ 0000000000016200     driver.obj
+ 0002:00004240       ??_C@_0DD@KIIDPBIG@?$FLchipsec?$FN?$FLIOCTL_RDMSR?$FN?5ERROR?3?5ex@HFIDCDCB@ 0000000000016240     driver.obj
+ 0002:00004280       ??_C@_0DF@BLBPOCHJ@?$FLchipsec?$FN?$FLIOCTL_RDMSR?$FN?5RDMSR?$CI?50x@HFIDCDCB@ 0000000000016280     driver.obj
+ 0002:000042c0       ??_C@_0EI@OEGOKPAH@?$FLchipsec?$FN?5ERROR?3?5STATUS_BUFFER_T@HFIDCDCB@ 00000000000162c0     driver.obj
+ 0002:00004310       ??_C@_0BK@MHNMMKJI@?$FLchipsec?$FN?5?$DO?5READ_IO_PORT?6?$AA@HFIDCDCB@ 0000000000016310     driver.obj
+ 0002:00004330       ??_C@_0DJ@CCPBIJKF@?$FLchipsec?$FN?$FLREAD_IO_PORT?$FN?5ERROR?3?5S@HFIDCDCB@ 0000000000016330     driver.obj
+ 0002:00004370       ??_C@_0DE@NAIHJOJB@?$FLchipsec?$FN?$FLREAD_IO_PORT?$FN?5ERROR?3?5e@HFIDCDCB@ 0000000000016370     driver.obj
+ 0002:000043b0       ??_C@_0EH@LCBIBIPE@?$FLchipsec?$FN?$FLREAD_IO_PORT?$FN?5I?1O?5Port@HFIDCDCB@ 00000000000163b0     driver.obj
+ 0002:00004400       ??_C@_0BL@NEKGNDDD@?$FLchipsec?$FN?5?$DO?5WRITE_IO_PORT?6?$AA@HFIDCDCB@ 0000000000016400     driver.obj
+ 0002:00004420       ??_C@_0EI@DFFEIJLA@?$FLchipsec?$FN?$FLWRITE_IO_PORT?$FN?5I?1O?5Por@HFIDCDCB@ 0000000000016420     driver.obj
+ 0002:00004470       ??_C@_0DF@FFDKAMDJ@?$FLchipsec?$FN?$FLWRITE_IO_PORT?$FN?5ERROR?3?5@HFIDCDCB@ 0000000000016470     driver.obj
+ 0002:000044b0       ??_C@_0CG@FCFBJKDL@?$FLchipsec?$FN?5?$DO?5GET_CPU_DESCRIPTOR_T@HFIDCDCB@ 00000000000164b0     driver.obj
+ 0002:000044e0       ??_C@_0DO@GEDPJNGB@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@ 00000000000164e0     driver.obj
+ 0002:00004520       ??_C@_0DK@HGELIPHI@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@ 0000000000016520     driver.obj
+ 0002:00004560       ??_C@_0EJ@FDLNFLP@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@ 0000000000016560     driver.obj
+ 0002:000045b0       ??_C@_0EK@MMMFPIDF@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@ 00000000000165b0     driver.obj
+ 0002:00004600       ??_C@_0FA@JIKFFCIO@?$FLchipsec?$FN?$FLGET_CPU_DESCRIPTOR_TAB@HFIDCDCB@ 0000000000016600     driver.obj
+ 0002:00004650       ??_C@_0BJ@JHNKLAIL@?$FLchipsec?$FN?5?$DO?5IOCTL_SWSMI?6?$AA@HFIDCDCB@ 0000000000016650     driver.obj
+ 0002:00004670       ??_C@_0CD@NLMEMLMJ@?$FLchipsec?$FN?5ERROR?3?5NO?5data?5provide@HFIDCDCB@ 0000000000016670     driver.obj
+ 0002:000046a0       ??_C@_0FP@GLJGPLBC@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@ 00000000000166a0     driver.obj
+ 0002:00004700       ??_C@_0DM@HNMBGKN@?$FLchipsec?$FN?$FLIOCTL_SWSMI?$FN?5SW?5SMI?5to@HFIDCDCB@ 0000000000016700     driver.obj
+ 0002:00004740       ??_C@_0CG@LKEKPELK@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RAX?5?$DN?50x?$CF@HFIDCDCB@ 0000000000016740     driver.obj
+ 0002:00004770       ??_C@_0CG@MGCLNBGB@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RBX?5?$DN?50x?$CF@HFIDCDCB@ 0000000000016770     driver.obj
+ 0002:000047a0       ??_C@_0CG@FLCEDABH@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RCX?5?$DN?50x?$CF@HFIDCDCB@ 00000000000167a0     driver.obj
+ 0002:000047d0       ??_C@_0CG@DOOJJKNH@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RDX?5?$DN?50x?$CF@HFIDCDCB@ 00000000000167d0     driver.obj
+ 0002:00004800       ??_C@_0CG@FEAHHDCE@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RSI?5?$DN?50x?$CF@HFIDCDCB@ 0000000000016800     driver.obj
+ 0002:00004830       ??_C@_0CG@FHHIOFII@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5RDI?5?$DN?50x?$CF@HFIDCDCB@ 0000000000016830     driver.obj
+ 0002:00004860       ??_C@_0BJ@OFPLONFJ@?$FLchipsec?$FN?5?$DO?5IOCTL_CPUID?6?$AA@HFIDCDCB@ 0000000000016860     driver.obj
+ 0002:00004880       ??_C@_0EE@ICLHHCIL@?$FLchipsec?$FN?5ERROR?3?5STATUS_INVALID_@HFIDCDCB@ 0000000000016880     driver.obj
+ 0002:000048d0       ??_C@_0BP@FCCABOOJ@?$FLchipsec?$FN?$FLIOCTL_CPUID?$FN?5CPUID?3?6?$AA@HFIDCDCB@ 00000000000168d0     driver.obj
+ 0002:000048f0       ??_C@_0CF@DBLBBMPL@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5EAX?5?$DN?50x?$CF@HFIDCDCB@ 00000000000168f0     driver.obj
+ 0002:00004920       ??_C@_0CF@FBONKJLA@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5ECX?5?$DN?50x?$CF@HFIDCDCB@ 0000000000016920     driver.obj
+ 0002:00004950       ??_C@_0CI@NCCMEPHG@?$FLchipsec?$FN?$FLIOCTL_CPUID?$FN?5CPUID?5ret@HFIDCDCB@ 0000000000016950     driver.obj
+ 0002:00004980       ??_C@_0CF@IMHLHADF@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5EBX?5?$DN?50x?$CF@HFIDCDCB@ 0000000000016980     driver.obj
+ 0002:000049b0       ??_C@_0CF@CMJOKPOI@?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5EDX?5?$DN?50x?$CF@HFIDCDCB@ 00000000000169b0     driver.obj
+ 0002:000049e0       ??_C@_0BG@COBEFPG@?$FLchipsec?$FN?5?$DO?5WRITE_CR?6?$AA@HFIDCDCB@ 00000000000169e0     driver.obj
+ 0002:00004a00       ??_C@_0DD@NOEIPJJK@?$FLchipsec?$FN?$FLWRITE_CR?$FN?5CR?5Reg?5?$CF?$CD04x@HFIDCDCB@ 0000000000016a00     driver.obj
+ 0002:00004a40       ??_C@_0BF@DPMKFNED@?$FLchipsec?$FN?5?$DO?5READ_CR?6?$AA@HFIDCDCB@ 0000000000016a40     driver.obj
+ 0002:00004a60       ??_C@_0DC@HBBDHBDC@?$FLchipsec?$FN?$FLREAD_CR?$FN?5CR?5Reg?5?$CF?$CD04x?0@HFIDCDCB@ 0000000000016a60     driver.obj
+ 0002:00004aa0       ??_C@_0BN@OJHMCJNG@?$FLchipsec?$FN?5?$DO?5IOCTL_HYPERCALL?6?$AA@HFIDCDCB@ 0000000000016aa0     driver.obj
+ 0002:00004ac0       ??_C@_0CH@NPALMKGD@?$FLchipsec?$FN?$FLIOCTL_HYPERCALL?$FN?5HYPER@HFIDCDCB@ 0000000000016ac0     driver.obj
+ 0002:00004af0       ??_C@_0CG@KJJPHNCG@?5?5?5?5RCX?5?$DN?50x?$CF016llX?5?5RDX?5?$DN?50x?$CF01@HFIDCDCB@ 0000000000016af0     driver.obj
+ 0002:00004b20       ??_C@_0CG@FAOMJGJH@?5?5?5?5R8?5?5?$DN?50x?$CF016llX?5?5R9?5?5?$DN?50x?$CF01@HFIDCDCB@ 0000000000016b20     driver.obj
+ 0002:00004b50       ??_C@_0CG@JJCIDCLM@?5?5?5?5R10?5?$DN?50x?$CF016llX?5?5R11?5?$DN?50x?$CF01@HFIDCDCB@ 0000000000016b50     driver.obj
+ 0002:00004b80       ??_C@_0CG@JHOLDFCE@?5?5?5?5RAX?5?$DN?50x?$CF016llX?5?5RBX?5?$DN?50x?$CF01@HFIDCDCB@ 0000000000016b80     driver.obj
+ 0002:00004bb0       ??_C@_0CG@CDIGGGPA@?5?5?5?5RDI?5?$DN?50x?$CF016llX?5?5RSI?5?$DN?50x?$CF01@HFIDCDCB@ 0000000000016bb0     driver.obj
+ 0002:00004be0       ??_C@_0CF@GHOMCNKG@?5?5?5?5XMM0?9XMM5?5buffer?5VA?5?$DN?50x?$CF016@HFIDCDCB@ 0000000000016be0     driver.obj
+ 0002:00004c10       ??_C@_0DH@DABPHIKO@?$FLchipsec?$FN?$FLIOCTL_HYPERCALL?$FN?5ERROR@HFIDCDCB@ 0000000000016c10     driver.obj
+ 0002:00004c50       ??_C@_0DA@NMCBKHPF@?$FLchipsec?$FN?$FLIOCTL_HYPERCALL?$FN?5retur@HFIDCDCB@ 0000000000016c50     driver.obj
+ 0002:00004c80       ??_C@_0CA@JNCHINIH@?$FLchipsec?$FN?5ERROR?3?5invalid?5IOCTL?6?$AA@HFIDCDCB@ 0000000000016c80     driver.obj
+ 0002:00004ca0       ??_C@_0DI@DLLPMLIJ@?$FLchipsec?$FN?5Restored?5active?5CPU?5ma@HFIDCDCB@ 0000000000016ca0     driver.obj
+ 0002:00004ce0       ??_C@_0DE@LODJIMA@?$FLchipsec?$FN?5Current?5CPU?5thread?5?5?5?5@HFIDCDCB@ 0000000000016ce0     driver.obj
+ 0002:00004d20       ??_C@_0EJ@LCHEKKN@?$FLchipsec?$FN?5Irp?9?$DOIoStatus?4Status?5?$DN@HFIDCDCB@ 0000000000016d20     driver.obj
+ 0002:00004d70       ??_C@_0L@FKDMGJNB@?$FLchipsec?$FN?6?$AA@HFIDCDCB@ 0000000000016d70     driver.obj
+ 0003:00000000       __imp_sprintf              0000000000017000     ntoskrnl:ntoskrnl.exe
+ 0003:00000008       __imp_ExAllocatePoolWithTag 0000000000017008     ntoskrnl:ntoskrnl.exe
+ 0003:00000010       __imp_KeQueryActiveProcessors 0000000000017010     ntoskrnl:ntoskrnl.exe
+ 0003:00000018       __imp_KeQueryActiveProcessorCount 0000000000017018     ntoskrnl:ntoskrnl.exe
+ 0003:00000020       __imp_IoDeleteSymbolicLink 0000000000017020     ntoskrnl:ntoskrnl.exe
+ 0003:00000028       __imp_ExFreePoolWithTag    0000000000017028     ntoskrnl:ntoskrnl.exe
+ 0003:00000030       __imp_RtlInitUnicodeString 0000000000017030     ntoskrnl:ntoskrnl.exe
+ 0003:00000038       __imp_IoDeleteDevice       0000000000017038     ntoskrnl:ntoskrnl.exe
+ 0003:00000040       __imp_MmFreeContiguousMemory 0000000000017040     ntoskrnl:ntoskrnl.exe
+ 0003:00000048       __imp_MmUnmapIoSpace       0000000000017048     ntoskrnl:ntoskrnl.exe
+ 0003:00000050       __imp_MmGetPhysicalAddress 0000000000017050     ntoskrnl:ntoskrnl.exe
+ 0003:00000058       __imp_MmMapIoSpace         0000000000017058     ntoskrnl:ntoskrnl.exe
+ 0003:00000060       __imp_IofCompleteRequest   0000000000017060     ntoskrnl:ntoskrnl.exe
+ 0003:00000068       __imp_IoCreateSymbolicLink 0000000000017068     ntoskrnl:ntoskrnl.exe
+ 0003:00000070       __imp_KeSetSystemAffinityThread 0000000000017070     ntoskrnl:ntoskrnl.exe
+ 0003:00000078       __imp_RtlAssert            0000000000017078     ntoskrnl:ntoskrnl.exe
+ 0003:00000080       __imp_KeNumberProcessors   0000000000017080     ntoskrnl:ntoskrnl.exe
+ 0003:00000088       __imp_DbgPrint             0000000000017088     ntoskrnl:ntoskrnl.exe
+ 0003:00000090       __imp_MmAllocateContiguousMemory 0000000000017090     ntoskrnl:ntoskrnl.exe
+ 0003:00000098       __imp_KeBugCheckEx         0000000000017098     ntoskrnl:ntoskrnl.exe
+ 0003:000000a0       __imp_MmGetSystemRoutineAddress 00000000000170a0     wdmsec:ntoskrnl.exe
+ 0003:000000a8       __imp_IoCreateDevice       00000000000170a8     wdmsec:ntoskrnl.exe
+ 0003:000000b0       __imp_ZwClose              00000000000170b0     wdmsec:ntoskrnl.exe
+ 0003:000000b8       __imp_ObOpenObjectByPointer 00000000000170b8     wdmsec:ntoskrnl.exe
+ 0003:000000c0       __imp_ZwSetSecurityObject  00000000000170c0     wdmsec:ntoskrnl.exe
+ 0003:000000c8       __imp_IoDeviceObjectType   00000000000170c8     wdmsec:ntoskrnl.exe
+ 0003:000000c8       IoDeviceObjectType         00000000000170c8     wdmsec:ntoskrnl.exe
+ 0003:000000d0       __imp__snwprintf           00000000000170d0     wdmsec:ntoskrnl.exe
+ 0003:000000d8       __imp_RtlLengthSecurityDescriptor 00000000000170d8     wdmsec:ntoskrnl.exe
+ 0003:000000e0       __imp_SeCaptureSecurityDescriptor 00000000000170e0     wdmsec:ntoskrnl.exe
+ 0003:000000e8       __imp_RtlCreateSecurityDescriptor 00000000000170e8     wdmsec:ntoskrnl.exe
+ 0003:000000f0       __imp_RtlSetDaclSecurityDescriptor 00000000000170f0     wdmsec:ntoskrnl.exe
+ 0003:000000f8       __imp_RtlAbsoluteToSelfRelativeSD 00000000000170f8     wdmsec:ntoskrnl.exe
+ 0003:00000100       __imp_IoIsWdmVersionAvailable 0000000000017100     wdmsec:ntoskrnl.exe
+ 0003:00000108       __imp_SeExports            0000000000017108     wdmsec:ntoskrnl.exe
+ 0003:00000110       __imp_wcschr               0000000000017110     wdmsec:ntoskrnl.exe
+ 0003:00000118       __imp__wcsnicmp            0000000000017118     wdmsec:ntoskrnl.exe
+ 0003:00000120       __imp_RtlLengthSid         0000000000017120     wdmsec:ntoskrnl.exe
+ 0003:00000128       __imp_RtlAddAccessAllowedAce 0000000000017128     wdmsec:ntoskrnl.exe
+ 0003:00000130       __imp_RtlGetSaclSecurityDescriptor 0000000000017130     wdmsec:ntoskrnl.exe
+ 0003:00000138       __imp_RtlGetDaclSecurityDescriptor 0000000000017138     wdmsec:ntoskrnl.exe
+ 0003:00000140       __imp_RtlGetGroupSecurityDescriptor 0000000000017140     wdmsec:ntoskrnl.exe
+ 0003:00000148       __imp_RtlGetOwnerSecurityDescriptor 0000000000017148     wdmsec:ntoskrnl.exe
+ 0003:00000150       __imp_ZwOpenKey            0000000000017150     wdmsec:ntoskrnl.exe
+ 0003:00000158       __imp_ZwCreateKey          0000000000017158     wdmsec:ntoskrnl.exe
+ 0003:00000160       __imp_ZwQueryValueKey      0000000000017160     wdmsec:ntoskrnl.exe
+ 0003:00000168       __imp_ZwSetValueKey        0000000000017168     wdmsec:ntoskrnl.exe
+ 0003:00000170       __imp_RtlFreeUnicodeString 0000000000017170     wdmsec:ntoskrnl.exe
+ 0003:00000178       __imp___C_specific_handler 0000000000017178     ntoskrnl:ntoskrnl.exe
+ 0003:00000180       \177ntoskrnl_NULL_THUNK_DATA 0000000000017180     ntoskrnl:ntoskrnl.exe
+ 0003:000001b0       SDDL_DEVOBJ_KERNEL_ONLY_buffer 00000000000171b0     wdmsec:iosddl.obj
+ 0003:000001b8       SDDL_DEVOBJ_KERNEL_ONLY    00000000000171b8     wdmsec:iosddl.obj
+ 0003:000001c8       SDDL_DEVOBJ_SYS_ALL_buffer 00000000000171c8     wdmsec:iosddl.obj
+ 0003:000001e8       SDDL_DEVOBJ_SYS_ALL        00000000000171e8     wdmsec:iosddl.obj
+ 0003:000001f8       SDDL_DEVOBJ_SYS_ALL_ADM_ALL_buffer 00000000000171f8     wdmsec:iosddl.obj
+ 0003:00000230       SDDL_DEVOBJ_SYS_ALL_ADM_ALL 0000000000017230     wdmsec:iosddl.obj
+ 0003:00000240       SDDL_DEVOBJ_SYS_ALL_ADM_RX_buffer 0000000000017240     wdmsec:iosddl.obj
+ 0003:00000280       SDDL_DEVOBJ_SYS_ALL_ADM_RX 0000000000017280     wdmsec:iosddl.obj
+ 0003:00000290       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_R_buffer 0000000000017290     wdmsec:iosddl.obj
+ 0003:000002e8       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_R 00000000000172e8     wdmsec:iosddl.obj
+ 0003:00000300       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_R_RES_R_buffer 0000000000017300     wdmsec:iosddl.obj
+ 0003:00000370       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_R_RES_R 0000000000017370     wdmsec:iosddl.obj
+ 0003:00000380       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RW_RES_R_buffer 0000000000017380     wdmsec:iosddl.obj
+ 0003:000003f8       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RW_RES_R 00000000000173f8     wdmsec:iosddl.obj
+ 0003:00000410       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RWX_RES_RWX_buffer 0000000000017410     wdmsec:iosddl.obj
+ 0003:00000490       SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RWX_RES_RWX 0000000000017490     wdmsec:iosddl.obj
+ 0003:000004a0       ??_C@_1CK@LEEDIGFP@?$AAI?$AAo?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAe?$AAc?$AAu?$AAr?$AAe?$AA?$AA@ 00000000000174a0     wdmsec:wlwrap.obj
+ 0003:000004d0       ??_C@_1EA@BAHCLPHE@?$AAI?$AAo?$AAV?$AAa?$AAl?$AAi?$AAd?$AAa?$AAt?$AAe?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAI?$AAo?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAA?$AAc?$AAc?$AAe?$AAs?$AAs?$AA?$AA@ 00000000000174d0     wdmsec:wlwrap.obj
+ 0003:00000510       ??_C@_1BG@COALCEMK@?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAi?$AAe?$AAs?$AA?$AA@ 0000000000017510     wdmsec:ppregstate.obj
+ 0003:00000528       ??_C@_1M@OAHBGIFG@?$AAC?$AAl?$AAa?$AAs?$AAs?$AA?$AA@ 0000000000017528     wdmsec:ppregstate.obj
+ 0003:00000538       ??_C@_1BO@DAOBINHA@?$AAN?$AAo?$AAD?$AAi?$AAs?$AAp?$AAl?$AAa?$AAy?$AAC?$AAl?$AAa?$AAs?$AAs?$AA?$AA@ 0000000000017538     wdmsec:ppregstate.obj
+ 0003:00000558       ??_C@_1BG@OPOOGLJC@?$AAN?$AAo?$AAU?$AAs?$AAe?$AAC?$AAl?$AAa?$AAs?$AAs?$AA?$AA@ 0000000000017558     wdmsec:ppregstate.obj
+ 0003:00000570       ??_C@_1BC@FCJNIDNL@?$AAS?$AAe?$AAc?$AAu?$AAr?$AAi?$AAt?$AAy?$AA?$AA@ 0000000000017570     wdmsec:ppregstate.obj
+ 0003:00000588       ??_C@_1BG@KCOOGCNN@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAT?$AAy?$AAp?$AAe?$AA?$AA@ 0000000000017588     wdmsec:ppregstate.obj
+ 0003:000005a0       ??_C@_1CM@DIJFBEC@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAC?$AAh?$AAa?$AAr?$AAa?$AAc?$AAt?$AAe?$AAr?$AAi?$AAs?$AAt?$AAi?$AAc?$AAs?$AA?$AA@ 00000000000175a0     wdmsec:ppregstate.obj
+ 0003:000005d0       ??_C@_1BE@DJHAJDEM@?$AAE?$AAx?$AAc?$AAl?$AAu?$AAs?$AAi?$AAv?$AAe?$AA?$AA@ 00000000000175d0     wdmsec:ppregstate.obj
+ 0003:000005f0       ??_C@_1HC@DKINPPAJ@?$AA?2?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAr?$AAy?$AA?2?$AAM?$AAa?$AAc?$AAh?$AAi?$AAn?$AAe?$AA?2?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AA?2?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt@ 00000000000175f0     wdmsec:ppregstate.obj
+ 0003:00000670       ??_C@_1GG@FCALANDO@?$AA?$HL?$AA?$CF?$AA0?$AA8?$AAX?$AA?9?$AA?$CF?$AA0?$AA4?$AAX?$AA?9?$AA?$CF?$AA0?$AA4?$AAX?$AA?9?$AA?$CF?$AA0?$AA2?$AAX?$AA?$CF?$AA0?$AA2?$AAX?$AA?9?$AA?$CF?$AA0?$AA2?$AAX?$AA?$CF?$AA0?$AA2@ 0000000000017670     wdmsec:ppregstate.obj
+ 0003:000006d8       ??_C@_15FCNJEDMF@?$AAG?$AAX?$AA?$AA@ 00000000000176d8     wdmsec:sesddl.obj
+ 0003:000006e0       ??_C@_15KLKFDJD@?$AAG?$AAW?$AA?$AA@ 00000000000176e0     wdmsec:sesddl.obj
+ 0003:000006e8       ??_C@_15DNGEKDKB@?$AAG?$AAR?$AA?$AA@ 00000000000176e8     wdmsec:sesddl.obj
+ 0003:000006f0       ??_C@_15HPMIFLNA@?$AAG?$AAA?$AA?$AA@ 00000000000176f0     wdmsec:sesddl.obj
+ 0003:000006f8       ??_C@_15NAFBOLGP@?$AAS?$AAD?$AA?$AA@ 00000000000176f8     wdmsec:sesddl.obj
+ 0003:00000700       ??_C@_15JMMBCOHI@?$AAW?$AAO?$AA?$AA@ 0000000000017700     wdmsec:sesddl.obj
+ 0003:00000708       ??_C@_15ELMAKJHJ@?$AAW?$AAD?$AA?$AA@ 0000000000017708     wdmsec:sesddl.obj
+ 0003:00000710       ??_C@_15IGNKAAHD@?$AAR?$AAC?$AA?$AA@ 0000000000017710     wdmsec:sesddl.obj
+ 0003:00000718       ??_C@_13PNBDBPLL@?$AAA?$AA?$AA@ 0000000000017718     wdmsec:sesddl.obj
+ 0004:00000000       HotPatchBuffer             0000000000018000     hotpatch.obj
+ 0004:00000100       __security_cookie          0000000000018100     BufferOverflowK:gs_support.obj
+ 0004:00000108       __security_cookie_complement 0000000000018108     BufferOverflowK:gs_support.obj
+ 0004:00000110       PiRegStateSysAllInherittedSecurityDescriptor 0000000000018110     wdmsec:ppregstate.obj
+ 0004:000002e0       WdmlibInitialized          00000000000182e0     wdmsec:wlwrap.obj
+ 0004:000002e8       PfnIoCreateDeviceSecure    00000000000182e8     wdmsec:wlwrap.obj
+ 0004:000002f0       PfnIoValidateDeviceIoControlAccess 00000000000182f0     wdmsec:wlwrap.obj
+ 0004:000002f8       PiRegStateDiscriptor       00000000000182f8     wdmsec:ppregstate.obj
+ 0006:00000008       WdmlibInit                 000000000001a008 f   wdmsec:wlwrap.obj
+ 0006:00000074       WdmlibIoCreateDeviceSecure 000000000001a074 f   wdmsec:wlwrap.obj
+ 0006:0000010c       IopDevObjApplyPostCreationSettings 000000000001a10c f   wdmsec:iodevobj.obj
+ 0006:000001b8       IoDevObjCreateDeviceSecure 000000000001a1b8 f   wdmsec:iodevobj.obj
+ 0006:00000370       PpRegStateLoadSecurityDescriptor 000000000001a370 f   wdmsec:ppregstate.obj
+ 0006:00000384       PpRegStateFreeStackCreationSettings 000000000001a384 f   wdmsec:ppregstate.obj
+ 0006:000003a4       PiRegStateOpenClassKey     000000000001a3a4 f   wdmsec:ppregstate.obj
+ 0006:00000540       PpRegStateInitEmptyCreationSettings 000000000001a540 f   wdmsec:ppregstate.obj
+ 0006:00000558       PiRegStateReadStackCreationSettingsFromKey 000000000001a558 f   wdmsec:ppregstate.obj
+ 0006:00000724       PpRegStateReadCreateClassCreationSettings 000000000001a724 f   wdmsec:ppregstate.obj
+ 0006:00000854       PpRegStateUpdateStackCreationSettings 000000000001a854 f   wdmsec:ppregstate.obj
+ 0006:00000980       SepSddlParseWideStringUlong 000000000001a980 f   wdmsec:sesddl.obj
+ 0006:00000a60       SepSddlAddAceToAcl         000000000001aa60 f   wdmsec:sesddl.obj
+ 0006:00000b48       SepSddlLookupAccessMaskInTable 000000000001ab48 f   wdmsec:sesddl.obj
+ 0006:00000be0       SepSddlGetSidForString     000000000001abe0 f   wdmsec:sesddl.obj
+ 0006:00000ca4       SepSddlGetAclForString     000000000001aca4 f   wdmsec:sesddl.obj
+ 0006:00001064       SepSddlDaclFromSDDLString  000000000001b064 f   wdmsec:sesddl.obj
+ 0006:0000112c       SepSddlSecurityDescriptorFromSDDLString 000000000001b12c f   wdmsec:sesddl.obj
+ 0006:0000122c       SeSddlSecurityDescriptorFromSDDL 000000000001b22c f   wdmsec:sesddl.obj
+ 0006:000012f4       SeSetSecurityAccessMask    000000000001b2f4 f   wdmsec:seutil.obj
+ 0006:00001320       SeUtilSecurityInfoFromSecurityDescriptor 000000000001b320 f   wdmsec:seutil.obj
+ 0006:000013f0       CmpRegUtilAllocateUnicodeString 000000000001b3f0 f   wdmsec:cmregutil.obj
+ 0006:0000143c       CmRegUtilUcValueSetUcString 000000000001b43c f   wdmsec:cmregutil.obj
+ 0006:0000153c       CmRegUtilUcValueGetDword   000000000001b53c f   wdmsec:cmregutil.obj
+ 0006:000015b4       CmRegUtilCreateUcKey       000000000001b5b4 f   wdmsec:cmregutil.obj
+ 0006:00001650       CmRegUtilOpenExistingUcKey 000000000001b650 f   wdmsec:cmregutil.obj
+ 0006:000016ac       CmRegUtilWstrValueSetWstrString 000000000001b6ac f   wdmsec:cmregutil.obj
+ 0006:00001704       CmRegUtilWstrValueSetUcString 000000000001b704 f   wdmsec:cmregutil.obj
+ 0006:00001744       CmRegUtilWstrValueSetFullBuffer 000000000001b744 f   wdmsec:cmregutil.obj
+ 0006:000017a4       CmRegUtilWstrValueGetDword 000000000001b7a4 f   wdmsec:cmregutil.obj
+ 0006:000017f4       CmRegUtilCreateWstrKey     000000000001b7f4 f   wdmsec:cmregutil.obj
+ 0006:0000186c       CmRegUtilOpenExistingWstrKey 000000000001b86c f   wdmsec:cmregutil.obj
+ 0006:000018bc       CmRegUtilUcValueGetFullBuffer 000000000001b8bc f   wdmsec:cmregutil.obj
+ 0006:000019f4       CmRegUtilWstrValueGetFullBuffer 000000000001b9f4 f   wdmsec:cmregutil.obj
+ 0007:00000008       __security_init_cookie     000000000001c008 f   BufferOverflowK:gs_support.obj
+ 0007:00000064       GsDriverEntry              000000000001c064 f   BufferOverflowK:gs_support.obj
+ 0007:00000084       __IMPORT_DESCRIPTOR_ntoskrnl 000000000001c084     ntoskrnl:ntoskrnl.exe
+ 0007:00000098       __NULL_IMPORT_DESCRIPTOR   000000000001c098     ntoskrnl:ntoskrnl.exe
+
+ entry point at        0007:00000064
+
+ Static symbols
+
+ 0002:00004d90       DriverDeviceControl$filt$0 0000000000016d90 f    CIL library: CIL module
+ 0002:00004db0       DriverDeviceControl$filt$1 0000000000016db0 f    CIL library: CIL module
+ 0002:00004dd0       DriverDeviceControl$filt$2 0000000000016dd0 f    CIL library: CIL module
+ 0002:00004df0       DriverDeviceControl$filt$3 0000000000016df0 f    CIL library: CIL module
+ 0002:00004e10       DriverDeviceControl$filt$4 0000000000016e10 f    CIL library: CIL module
+ 0002:00004e30       DriverDeviceControl$filt$5 0000000000016e30 f    CIL library: CIL module
+ 0002:00004e50       DriverDeviceControl$filt$6 0000000000016e50 f    CIL library: CIL module
+ 0002:00004e70       DriverDeviceControl$filt$7 0000000000016e70 f    CIL library: CIL module

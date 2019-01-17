@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<configuration>
+<!-- XML configuration file for ICH SPI
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+  
+  <pci>
+  </pci>
+
+  <mmio>
+    <bar name="SPIBAR7"   bus="0" dev="0x1F" fun="0" reg="0xF0" width="4" mask="0xFFFFC000"  size="0x70"  enable_bit="0" desc="SPI Controller Register Range" offset="0x3020"/>
+    <bar name="SPIBAR8"   bus="0" dev="0x1F" fun="0" reg="0xF0" width="4" mask="0xFFFFC000"  size="0xE0"  enable_bit="0" desc="SPI Controller Register Range" offset="0x3020"/>
+  </mmio>
+
+  <io>
+  </io>
+
+  <memory>
+  </memory>
+
+  <registers>
+  
+    <!-- SPI Flash Controller MMIO registers -->
+    <register name="PREOP_7" type="mmio" bar="SPIBAR7" offset="0x54" size="2" desc="Prefix Opcode Configuration Register">
+      <field name="PREOP0" bit="0" size="8" desc="Prefix Opcode 0"/>
+      <field name="PREOP1" bit="8" size="8" desc="Prefix Opcode 1"/>
+    </register>
+    <register name="OPTYPE_7" type="mmio" bar="SPIBAR7" offset="0x56" size="2" desc="Opcode Type Configuration Register">
+      <field name="OPTYPE0" bit="0"  size="2" desc="Opcode Type 0"/>
+      <field name="OPTYPE1" bit="2"  size="2" desc="Opcode Type 1"/>
+      <field name="OPTYPE2" bit="4"  size="2" desc="Opcode Type 2"/>
+      <field name="OPTYPE3" bit="6"  size="2" desc="Opcode Type 3"/>
+      <field name="OPTYPE4" bit="8"  size="2" desc="Opcode Type 4"/>
+      <field name="OPTYPE5" bit="10" size="2" desc="Opcode Type 5"/>
+      <field name="OPTYPE6" bit="12" size="2" desc="Opcode Type 6"/>
+      <field name="OPTYPE7" bit="14" size="2" desc="Opcode Type 7"/>
+    </register>
+    <register name="OPMENU_7" type="mmio" bar="SPIBAR7" offset="0x58" size="8" desc="Opcode Menu Configuration Register">
+      <field name="OPCODE0" bit="0"  size="8" desc="Allowable Opcode 0"/>
+      <field name="OPCODE1" bit="8"  size="8" desc="Allowable Opcode 1"/>
+      <field name="OPCODE2" bit="16" size="8" desc="Allowable Opcode 2"/>
+      <field name="OPCODE3" bit="24" size="8" desc="Allowable Opcode 3"/>
+      <field name="OPCODE4" bit="32" size="8" desc="Allowable Opcode 4"/>
+      <field name="OPCODE5" bit="40" size="8" desc="Allowable Opcode 5"/>
+      <field name="OPCODE6" bit="48" size="8" desc="Allowable Opcode 6"/>
+      <field name="OPCODE7" bit="56" size="8" desc="Allowable Opcode 7"/>
+    </register>
+    <register name="OPMENU_LO_7" type="mmio" bar="SPIBAR7" offset="0x58" size="4" desc="Opcode Menu Configuration Register Low">
+      <field name="OPCODE0" bit="0"  size="8" desc="Allowable Opcode 0"/>
+      <field name="OPCODE1" bit="8"  size="8" desc="Allowable Opcode 1"/>
+      <field name="OPCODE2" bit="16" size="8" desc="Allowable Opcode 2"/>
+      <field name="OPCODE3" bit="24" size="8" desc="Allowable Opcode 3"/>
+    </register>
+    <register name="OPMENU_HI_7" type="mmio" bar="SPIBAR7" offset="0x5C" size="4" desc="Opcode Menu Configuration Register High">
+      <field name="OPCODE4" bit="0"  size="8" desc="Allowable Opcode 4"/>
+      <field name="OPCODE5" bit="8"  size="8" desc="Allowable Opcode 5"/>
+      <field name="OPCODE6" bit="16" size="8" desc="Allowable Opcode 6"/>
+      <field name="OPCODE7" bit="24" size="8" desc="Allowable Opcode 7"/>
+    </register>
+    <register name="PR0_7" type="mmio" bar="SPIBAR7" offset="0x60" size="4" desc="Protected Range 0">
+      <field name="PRB" bit="0"  size="12" desc="Protected Range Base"/>
+      <field name="PRL" bit="12" size="12" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PR1_7" type="mmio" bar="SPIBAR7" offset="0x64" size="4" desc="Protected Range 1">
+      <field name="PRB" bit="0"  size="12" desc="Protected Range Base"/>
+      <field name="PRL" bit="12" size="12" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="PR2_7" type="mmio" bar="SPIBAR7" offset="0x68" size="4" desc="Protected Range 2">
+      <field name="PRB" bit="0"  size="12" desc="Protected Range Base"/>
+      <field name="PRL" bit="12" size="12" desc="Protected Range Limit"/>
+      <field name="WPE" bit="31" size="1"  desc="Write Protection Enabled"/>
+    </register>
+    <register name="OPMENU_8" type="mmio" bar="SPIBAR8" offset="0x98" size="8" desc="Opcode Menu Configuration Register">
+      <field name="OPCODE0" bit="0"  size="8" desc="Allowable Opcode 0"/>
+      <field name="OPCODE1" bit="8"  size="8" desc="Allowable Opcode 1"/>
+      <field name="OPCODE2" bit="16" size="8" desc="Allowable Opcode 2"/>
+      <field name="OPCODE3" bit="24" size="8" desc="Allowable Opcode 3"/>
+      <field name="OPCODE4" bit="32" size="8" desc="Allowable Opcode 4"/>
+      <field name="OPCODE5" bit="40" size="8" desc="Allowable Opcode 5"/>
+      <field name="OPCODE6" bit="48" size="8" desc="Allowable Opcode 6"/>
+      <field name="OPCODE7" bit="56" size="8" desc="Allowable Opcode 7"/>
+    </register>
+    <register name="OPMENU_LO_8" type="mmio" bar="SPIBAR8" offset="0x98" size="4" desc="Opcode Menu Configuration Register Low">
+      <field name="OPCODE0" bit="0"  size="8" desc="Allowable Opcode 0"/>
+      <field name="OPCODE1" bit="8"  size="8" desc="Allowable Opcode 1"/>
+      <field name="OPCODE2" bit="16" size="8" desc="Allowable Opcode 2"/>
+      <field name="OPCODE3" bit="24" size="8" desc="Allowable Opcode 3"/>
+    </register>
+    <register name="OPMENU_HI_8" type="mmio" bar="SPIBAR8" offset="0x9C" size="4" desc="Opcode Menu Configuration Register High">
+      <field name="OPCODE4" bit="0"  size="8" desc="Allowable Opcode 4"/>
+      <field name="OPCODE5" bit="8"  size="8" desc="Allowable Opcode 5"/>
+      <field name="OPCODE6" bit="16" size="8" desc="Allowable Opcode 6"/>
+      <field name="OPCODE7" bit="24" size="8" desc="Allowable Opcode 7"/>
+    </register>
+    <register name="LVSCC_8" type="mmio" bar="SPIBAR8" offset="0xC1" size="4" desc="Vendor Specific Component Capabilities">
+      <field name="LBES"  bit="0"  size="2" desc="Block/Sector Erase Size"/>
+      <field name="LWG"   bit="2"  size="1" desc="Write Granularity"/>
+      <field name="LWSR"  bit="3"  size="1" desc="Write Status Required"/>
+      <field name="LEO"   bit="8"  size="8" desc="Erase Opcode"/>
+      <field name="VCL"   bit="23" size="1" desc="Vendor Component Lock"/>
+    </register>
+
+  </registers>
+  
+  <controls>
+  </controls>
+  
+</configuration>

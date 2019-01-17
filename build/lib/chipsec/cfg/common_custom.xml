@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<configuration>
+<!-- Common xml configuration file
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+
+  <!-- #################################### -->
+  <!--                                      -->
+  <!-- Configuration registers              -->
+  <!--                                      -->
+  <!-- #################################### -->
+  <registers>
+
+    <!-- BIOS Guard specific MSRs -->
+    <register name="MSR_PLATFORM_INFO" type="msr" msr="0xCE" desc="Platform Info MSR">
+      <field name="BIOSGuard" bit="35" size="1" desc="BIOS Guard" />
+      <field name="SAMPLE_PART" bit="27" size="1" desc="preproduction sample" />
+    </register>
+    <register name="PLAT_FRMW_PROT_CTRL_MSR" type="msr" msr="0x110" desc="Platform Firmware Protection Control MSR">
+      <field name="Lock"   bit="0" size="1" desc="BIOS Guard Lock" />
+      <field name="Enable" bit="1" size="1" desc="BIOS Guard Enable" />
+    </register>
+    
+    <!-- CPU Model Specific Registers -->  
+    <register name="FEATURE_CONFIG"   type="msr" msr="0x13C" desc="FEATURE_CONFIG Register">
+      <field name="Lock"     bit="0"  size="1"  desc="FEATURE_CONFIG Register Lock" />
+    </register>    
+
+    <register name="PM_CFG" type="mmio" bar="RCBA" offset="0x3318" size="4" desc="PMC Configuration"/>
+       
+    <register name="LT_LOCK_MEMORY" type="msr" msr="0x2E7" desc="Config Lock MSR">
+      <field name="ConfigLock" bit="0" size="1" desc="ConfigLock"/>
+    </register>
+    <register name="IA32_DEBUG_INTERFACE" type="msr" msr="0xC80" desc="Silicon Debug Feature Control">
+      <field name="ENABLE"         bit="0"  size="1"  desc="Enable" />
+      <field name="LOCK"           bit="30" size="1"  desc="Lock (set automatically on the first SMI)" />
+      <field name="DEBUG_OCCURRED" bit="31" size="1"  desc="Debug Occurred (set by hardware)" />
+    </register>
+    
+  </registers>
+
+  <controls>
+    <control name="PlatformSamplePart" register="MSR_PLATFORM_INFO"   field="SAMPLE_PART" desc="preproduction sample"/>
+    <control name="FeatureConfigLock" register="FEATURE_CONFIG" field="Lock" desc="Lock CPU feature config"/>
+    <control name="SPIFDSecurityOverridePinStrap" register="HSFS" field="FDOPSS" desc="SPI Controller Flash Descriptor Security Override Pin Strap (FDOPSS)"/>
+    <control name="ConfigLock" register="LT_LOCK_MEMORY" field="ConfigLock" desc="Configuration Lock"/>
+  </controls>
+  
+</configuration>

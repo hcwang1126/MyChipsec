@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<configuration platform="KNL" >
+<!-- XML configuration file for Knights Landing Server
+-->
+<!--
+***********************************************************
+
+                   PRE-RELEASE NOTICE
+
+        This file contains pre-release functionality
+        Please do not distribute this file publicly
+
+***********************************************************
+-->
+  <pci>
+    <device name="_SMBCNTL_0" bus="1" dev="0x1E" fun="0" vid="0x8086" />
+    <device name="_SMM_FEATURE_CONTROL" bus="0" dev="0x08" fun="1" vid="0x8086" />
+    <device name="_PCU_LT_CTRL" bus="1" dev="0x1E" fun="3" vid="0x8086" />
+  </pci>
+
+  <mmio>
+  </mmio>
+
+  <io>
+  </io>
+
+  <memory>
+  </memory>
+
+  <registers>
+    <!-- Host Controller -->
+    <register name="IIOMISCCTRL" type="mmcfg" bus="0" dev="5" fun="0" offset="0x1C0" size="4" desc="IIO MISC Control">
+      <field name="disable_reqid_filter" bit="48" size="1" desc="disable_reqid_filter bit"/>
+    </register>
+
+    <register name="SMM_FEATURE_CONTROL" type="pcicfg" bus="0" dev="0x8" fun="1" offset="0x58" size="4" desc="SMM and Code Access Check Violation features"/>
+    
+    <!-- SPSR PCIe Configuration Space -->
+    <register name="SMBCNTL_0" type="mmcfg" bus="1" dev="0x1E" fun="0" offset="0x108" size="4" desc="SMBCNTL_0 Register">
+      <field name="smb_dis_wrt" bit="26" size="1" desc="Disable SMBus Write"/>
+    </register>
+        
+     <!-- PCH Root Complex Register Base MMIO registers -->
+    <register name="TCLOCKDN" type="mmio" bar="RCBA" offset="0x0050" size="4" desc="Chipset Initialization Register 0050">
+      <field name="TC_LockDown" bit="31"  size="1" desc="TCLOCKDN"/>
+    </register>
+        
+    <!-- PCH Root Complex Register Base MMIO registers -->
+    <register name="PM_CFG" type="mmio" bar="RCBA" offset="0x3318" size="4" desc="PMC Configuration">
+      <field name="BIT27" bit="27" size="1" desc="BIT 27"/>
+      <field name="BIT22" bit="22" size="1" desc="BIT 22"/>
+    </register>
+    
+    <!-- Power Control Unit (PCU) Registers -->
+    <register name="PCU_LT_CTRL" type="pcicfg" bus="1" dev="0x1E" fun="3" offset="0xF0" size="4" desc="PCU Intel TXT Control">
+      <field name="PIT" bit="31" size="1" desc="PECI is trusted"/>
+    </register>
+
+  </registers>
+  
+  <controls>
+  </controls>
+  
+</configuration>
