@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #CHIPSEC: Platform Security Assessment Framework
-#Copyright (c) 2010-2018, Intel Corporation
+#Copyright (c) 2010-2019, Intel Corporation
 #
 #This program is free software; you can redistribute it and/or
 #modify it under the terms of the GNU General Public License
@@ -81,7 +81,6 @@ IOCTL_FREE_PHYSMEM             = 0x16
 LZMA  = efi_compressor.LzmaDecompress
 Tiano = efi_compressor.TianoDecompress
 EFI   = efi_compressor.EfiDecompress
-
 
 class MemoryMapping(mmap.mmap):
     """Memory mapping based on Python's mmap.
@@ -218,7 +217,7 @@ class LinuxHelper(Helper):
             except BaseException as be:
                 raise OsHelperError("Unable to open chipsec device. Did you run as root/sudo and load the driver?\n %s"%str(be),errno.ENXIO)
 
-            self._ioctl_base = fcntl.ioctl(self.dev_fh, IOCTL_BASE) << 4
+            self._ioctl_base = self.compute_ioctlbase()
 
     def devmem_available(self):
         """Check if /dev/mem is usable.
@@ -297,6 +296,23 @@ class LinuxHelper(Helper):
             os.close(self.dev_mem)
         self.dev_mem = None
 
+    # code taken from /include/uapi/asm-generic/ioctl.h
+    # by default itype is 'C' see drivers/linux/include/chipsec.h
+    # currently all chipsec ioctl functions are _IOWR
+    # currently all size are pointer
+    def compute_ioctlbase(self,itype = 'C'):
+        #define _IOWR(type,nr,size)	 _IOC(_IOC_READ|_IOC_WRITE,(type),(nr),(_IOC_TYPECHECK(size))) 
+        #define _IOC(dir,type,nr,size) \
+        #    (((dir)  << _IOC_DIRSHIFT) | \ 
+        #    ((type) << _IOC_TYPESHIFT) | \ 
+        #    ((nr)   << _IOC_NRSHIFT) | \ 
+        #    ((size) << _IOC_SIZESHIFT)) 
+        # IOC_READ | _IOC_WRITE is 3 
+        # default _IOC_DIRSHIFT is 30
+        # default _IOC_TYPESHIFT is 8
+        # nr will be 0
+        # _IOC_SIZESHIFT is 16
+        return (3 << 30) | (ord(itype) << 8) | (struct.calcsize(self._pack) << 16)
 
     def ioctl(self, nr, args, *mutate_flag):
         return fcntl.ioctl(self.dev_fh, self._ioctl_base + nr, args)
@@ -314,7 +330,7 @@ class LinuxHelper(Helper):
                 return region
         return None
 
-    def native_map_io_space(self, base, size, unused_cache_type):
+    def native_map_io_space(self, base, size):
         """Map to memory a specific region."""
         if self.devmem_available() and not self.memory_mapping(base, size):
             if logger().VERBOSE:
@@ -547,33 +563,36 @@ class LinuxHelper(Helper):
         reg = out_buf[:size]
         return defines.unpack1(reg, size)
 
-    def native_read_mmio_reg(self, phys_address, size):
+    def native_read_mmio_reg(self, bar_base, bar_size, offset, size):
+        if bar_size is None: bar_size = offset + size
         if self.devmem_available():
-            region = self.memory_mapping(phys_address, size)
+            region = self.memory_mapping(bar_base, bar_size)
             if not region:
-                os.lseek(self.dev_mem, phys_address, os.SEEK_SET)
-                reg = os.read(self.dev_mem, size)
-            else:
-                region.seek(phys_address - region.start)
-                reg = region.read(size)
+                self.native_map_io_space(bar_base, bar_size)
+                region = self.memory_mapping(bar_base, bar_size)
+                if not region: logger().error("Unable to map region {:08x}".format(bar_base))
+            region.seek(bar_base + offset - region.start)
+            reg = region.read(size)
             return defines.unpack1(reg, size)
 
     def write_mmio_reg(self, phys_address, size, value):
         in_buf = struct.pack( "3"+self._pack, phys_address, size, value )
         out_buf = self.ioctl(IOCTL_WRMMIO, in_buf)
 
-    def native_write_mmio_reg(self, phys_address, size, value):
+    def native_write_mmio_reg(self, bar_base, bar_size, offset, size, value):
+        if bar_size is None: bar_size = offset + size
         if self.devmem_available():
             reg = defines.pack1(value, size)
-            region = self.memory_mapping(phys_address, size)
+            region = self.memory_mapping(bar_base, bar_size)
             if not region:
-                os.lseek(self.dev_mem, phys_address, os.SEEK_SET)
-                written = os.write(self.dev_mem, reg)
-                if written != size:
-                    logger().error("Unable to write all data to MMIO (wrote %d of %d)" % (written, size))
-            else:
-                region.seek(phys_address - region.start)
-                region.write(reg)
+                self.native_map_io_space(bar_base, bar_size)
+                region = self.memory_mapping(bar_base, bar_size)
+                if not region: logger().error("Unable to map region {:08x}".format(bar_base))
+            region.seek(bar_base + offset - region.start)
+            region.write(reg)                
+            if written != size:
+                logger().error("Unable to write all data to MMIO (wrote %d of %d)" % (written, size))
+
 
     def get_ACPI_SDT( self ):
         raise UnimplementedAPIError( "get_ACPI_SDT" )

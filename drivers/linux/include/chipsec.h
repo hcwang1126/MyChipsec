@@ -1,6 +1,6 @@
 /*
 CHIPSEC: Platform Security Assessment Framework
-Copyright (c) 2010-2014, Intel Corporation
+Copyright (c) 2010-2019, Intel Corporation
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -24,28 +24,30 @@ chipsec@intel.com
 #define MSR_IA32_BIOS_UPDT_TRIG 0x79
 #define MSR_IA32_BIOS_SIGN_ID   0x8b
 
-#define IOCTL_BASE                     _IO(0, 0)
-#define IOCTL_RDIO                     _IOWR(0, 0x1, int*)
-#define IOCTL_WRIO                     _IOWR(0, 0x2, int*)
-#define IOCTL_RDPCI                    _IOWR(0, 0x3, int*)
-#define IOCTL_WRPCI                    _IOWR(0, 0x4, int*)
-#define IOCTL_RDMSR                    _IOWR(0, 0x5, int*) 
-#define IOCTL_WRMSR                    _IOWR(0, 0x6, int*) 
-#define IOCTL_CPUID                    _IOWR(0, 0x7, int*) 
-#define IOCTL_GET_CPU_DESCRIPTOR_TABLE _IOWR(0, 0x8, int*)
-#define IOCTL_HYPERCALL                _IOWR(0, 0x9, int*)
-#define IOCTL_SWSMI                    _IOWR(0, 0xA, int*)
-#define IOCTL_LOAD_UCODE_PATCH         _IOWR(0, 0xB, int*)
-#define IOCTL_ALLOC_PHYSMEM            _IOWR(0, 0xC, int*)
-#define IOCTL_GET_EFIVAR               _IOWR(0, 0xD, int*)
-#define IOCTL_SET_EFIVAR               _IOWR(0, 0xE, int*)       
-#define IOCTL_RDCR                     _IOWR(0, 0x10, int*) 
-#define IOCTL_WRCR                     _IOWR(0, 0x11, int*) 
-#define IOCTL_RDMMIO                   _IOWR(0, 0x12, int*)
-#define IOCTL_WRMMIO                   _IOWR(0, 0x13, int*)
-#define IOCTL_VA2PA                    _IOWR(0, 0x14, int*)
-#define IOCTL_MSGBUS_SEND_MESSAGE      _IOWR(0, 0x15, int*)
-#define IOCTL_FREE_PHYSMEM             _IOWR(0, 0x16, int*)
+#define IOCTL_NUM 'C'
+
+#define IOCTL_BASE                     _IO(IOCTL_NUM, 0)
+#define IOCTL_RDIO                     _IOWR(IOCTL_NUM, 0x1, int*)
+#define IOCTL_WRIO                     _IOWR(IOCTL_NUM, 0x2, int*)
+#define IOCTL_RDPCI                    _IOWR(IOCTL_NUM, 0x3, int*)
+#define IOCTL_WRPCI                    _IOWR(IOCTL_NUM, 0x4, int*)
+#define IOCTL_RDMSR                    _IOWR(IOCTL_NUM, 0x5, int*) 
+#define IOCTL_WRMSR                    _IOWR(IOCTL_NUM, 0x6, int*) 
+#define IOCTL_CPUID                    _IOWR(IOCTL_NUM, 0x7, int*) 
+#define IOCTL_GET_CPU_DESCRIPTOR_TABLE _IOWR(IOCTL_NUM, 0x8, int*)
+#define IOCTL_HYPERCALL                _IOWR(IOCTL_NUM, 0x9, int*)
+#define IOCTL_SWSMI                    _IOWR(IOCTL_NUM, 0xA, int*)
+#define IOCTL_LOAD_UCODE_PATCH         _IOWR(IOCTL_NUM, 0xB, int*)
+#define IOCTL_ALLOC_PHYSMEM            _IOWR(IOCTL_NUM, 0xC, int*)
+#define IOCTL_GET_EFIVAR               _IOWR(IOCTL_NUM, 0xD, int*)
+#define IOCTL_SET_EFIVAR               _IOWR(IOCTL_NUM, 0xE, int*)       
+#define IOCTL_RDCR                     _IOWR(IOCTL_NUM, 0x10, int*) 
+#define IOCTL_WRCR                     _IOWR(IOCTL_NUM, 0x11, int*) 
+#define IOCTL_RDMMIO                   _IOWR(IOCTL_NUM, 0x12, int*)
+#define IOCTL_WRMMIO                   _IOWR(IOCTL_NUM, 0x13, int*)
+#define IOCTL_VA2PA                    _IOWR(IOCTL_NUM, 0x14, int*)
+#define IOCTL_MSGBUS_SEND_MESSAGE      _IOWR(IOCTL_NUM, 0x15, int*)
+#define IOCTL_FREE_PHYSMEM             _IOWR(IOCTL_NUM, 0x16, int*)
 
 //
 // SoC IOSF Message Bus constants

@@ -24,9 +24,13 @@ check_kernel_dir:
 
 chipsec: check_kernel_dir clean
 	nasm -f $(elf-size) -o $(asm-path)/cpu.o $(asm-path)/cpu.asm
-	make -C $(KERNEL_SRC_DIR) SUBDIRS=${CURDIR} modules
+	@if [ `grep -c 'D efi' /proc/kallsyms` != "0" ]; then \
+	    make CFLAGS_MODULE=-DHAS_EFI=1 -C $(KERNEL_SRC_DIR) M=${CURDIR} modules; \
+	else \
+	    make -C $(KERNEL_SRC_DIR) M=${CURDIR} modules; \
+	fi
 
 clean: check_kernel_dir
-	make -C $(KERNEL_SRC_DIR) SUBDIRS=${CURDIR} clean
+	make -C $(KERNEL_SRC_DIR) M=${CURDIR} clean
 	rm -f ${asm-path}/cpu.o
 

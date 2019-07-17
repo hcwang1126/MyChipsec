@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #CHIPSEC: Platform Security Assessment Framework
-#Copyright (c) 2010-2018, Intel Corporation
+#Copyright (c) 2010-2019, Intel Corporation
 #
 #This program is free software; you can redistribute it and/or
 #modify it under the terms of the GNU General Public License
@@ -257,7 +257,7 @@ PCH_CODE_PREFIX = 'PCH_'
 PCH_CODE_1xx    = 'PCH_1XX'
 PCH_CODE_2xx    = 'PCH_2XX'
 PCH_CODE_3xx    = 'PCH_3XX'
-PCH_CODE_C620   = 'PCH_620'
+PCH_CODE_C620   = 'PCH_C620'
 PCH_CODE_C60x   = 'PCH_C60X'
 PCH_CODE_C61x   = 'PCH_C61X'
 
@@ -292,7 +292,7 @@ pch_dictionary = {
 0xA30E : {'name' : 'CM246',  'id' : PCH_ID_3xx, 'code' : PCH_CODE_3xx, 'longname' : 'Intel CM246 (300 series) PCH'},
 
 # C600 and X79 series PCH
-0x1D41 : {'name' : 'C600', 'id' : PCH_ID_C60x, 'code' : PCH_CODE_C60x, 'longname' : 'Intel C600/X97 series PCH'},
+0x1D41 : {'name' : 'C600', 'id' : PCH_ID_C60x, 'code' : PCH_CODE_C60x, 'longname' : 'Intel C600/X79 series PCH'},
 
 # C610 and X99 series PCH
 0x8D40 : {'name' : 'C610',   'id' : PCH_ID_C61x, 'code' : PCH_CODE_C61x, 'longname' : 'Intel Wellsburg (C610/X99 series) PCH'},
@@ -572,9 +572,10 @@ class Chipset:
                 for _device in _pci.iter('device'):
                     _name = _device.attrib['name']
                     del _device.attrib['name']
-                    if 'undef' in _device.attrib and _name in self.Cfg.CONFIG_PCI:
-                        if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _device.attrib['undef']))
-                        self.Cfg.CONFIG_PCI.pop(_name, None)
+                    if 'undef' in _device.attrib:
+                        if _name in self.Cfg.CONFIG_PCI:
+                            if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _device.attrib['undef']))
+                            self.Cfg.CONFIG_PCI.pop(_name, None)
                         continue
                     self.Cfg.CONFIG_PCI[ _name ] = _device.attrib
                     if logger().VERBOSE: logger().log( "    + %-16s: %s" % (_name, _device.attrib) )
@@ -583,9 +584,10 @@ class Chipset:
                 for _bar in _mmio.iter('bar'):
                     _name = _bar.attrib['name']
                     del _bar.attrib['name']
-                    if 'undef' in _bar.attrib and _name in self.Cfg.MMIO_BARS:
-                        if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _bar.attrib['undef']))
-                        self.Cfg.MMIO_BARS.pop(_name, None)
+                    if 'undef' in _bar.attrib:
+                        if _name in self.Cfg.MMIO_BARS:
+                            if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _bar.attrib['undef']))
+                            self.Cfg.MMIO_BARS.pop(_name, None)
                         continue
                     self.Cfg.MMIO_BARS[ _name ] = _bar.attrib
                     if logger().VERBOSE: logger().log( "    + %-16s: %s" % (_name, _bar.attrib) )
@@ -594,9 +596,10 @@ class Chipset:
                 for _bar in _io.iter('bar'):
                     _name = _bar.attrib['name']
                     del _bar.attrib['name']
-                    if 'undef' in _bar.attrib and _name in self.Cfg.IO_BARS:
-                        if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _bar.attrib['undef']))
-                        self.Cfg.IO_BARS.pop(_name, None)
+                    if 'undef' in _bar.attrib:
+                        if _name in self.Cfg.IO_BARS:
+                            if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _bar.attrib['undef']))
+                            self.Cfg.IO_BARS.pop(_name, None)
                         continue
                     self.Cfg.IO_BARS[ _name ] = _bar.attrib
                     if logger().VERBOSE: logger().log( "    + %-16s: %s" % (_name, _bar.attrib) )
@@ -605,9 +608,10 @@ class Chipset:
                 for _range in _memory.iter('range'):
                     _name = _range.attrib['name']
                     del _range.attrib['name']
-                    if 'undef' in _range.attrib and _name in self.Cfg.MEMORY_RANGES:
-                        if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _range.attrib['undef']))
-                        self.Cfg.MEMORY_RANGES.pop(_name, None)
+                    if 'undef' in _range.attrib:
+                        if _name in self.Cfg.MEMORY_RANGES:
+                            if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _range.attrib['undef']))
+                            self.Cfg.MEMORY_RANGES.pop(_name, None)
                         continue
                     self.Cfg.MEMORY_RANGES[ _name ] = _range.attrib
                     if logger().VERBOSE: logger().log( "    + %-16s: %s" % (_name, _range.attrib) )
@@ -616,9 +620,10 @@ class Chipset:
                 for _register in _registers.iter('register'):
                     _name = _register.attrib['name']
                     del _register.attrib['name']
-                    if 'undef' in _register.attrib and _name in self.Cfg.REGISTERS:
-                        if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _register.attrib['undef']))
-                        self.Cfg.REGISTERS.pop(_name, None)
+                    if 'undef' in _register.attrib:
+                        if _name in self.Cfg.REGISTERS:
+                            if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _register.attrib['undef']))
+                            self.Cfg.REGISTERS.pop(_name, None)
                         continue
                     if 'size' not in _register.attrib: _register.attrib['size'] = "0x4"
                     if 'desc' not in _register.attrib: _register.attrib['desc'] = ''
@@ -637,9 +642,10 @@ class Chipset:
                 for _control in _controls.iter('control'):
                     _name = _control.attrib['name']
                     del _control.attrib['name']
-                    if 'undef' in _control.attrib and _name in self.Cfg.CONTROLS:
-                        if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _control.attrib['undef']))
-                        self.Cfg.CONTROLS.pop(_name, None)
+                    if 'undef' in _control.attrib:
+                        if _name in self.Cfg.CONTROLS:
+                            if logger().VERBOSE: logger().log("    - {:16}: {}".format(_name, _control.attrib['undef']))
+                            self.Cfg.CONTROLS.pop(_name, None)
                         continue
                     self.Cfg.CONTROLS[ _name ] = _control.attrib
                     if logger().VERBOSE: logger().log( "    + %-16s: %s" % (_name, _control.attrib) )
@@ -856,6 +862,8 @@ class Chipset:
 
     def register_has_field( self, reg_name, field_name ):
         reg_def = self.get_register_def(reg_name )
+        if 'FIELDS' not in reg_def:
+            return False
         return (field_name in reg_def['FIELDS'])
 
     def _register_fields_str(self, reg_def, reg_val):

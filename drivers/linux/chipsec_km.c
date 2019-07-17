@@ -28,10 +28,13 @@ chipsec@intel.com
 #include <linux/slab.h>
 #include <asm/io.h>
 #include <linux/smp.h>
-#include <linux/efi.h>
 #include <linux/miscdevice.h>
 
 #include "include/chipsec.h"
+
+#ifdef HAS_EFI
+    #include <linux/efi.h>
+#endif
 
 #define _GNU_SOURCE 
 #define CHIPSEC_VER_ 		1
@@ -544,7 +547,7 @@ int __weak phys_mem_access_prot_allowed(struct file *file,
         return 1;
 }
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,15,4)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,1,12) && defined(ARCH_HAS_VALID_PHYS_ADDR_RANGE)
 int valid_mmap_phys_addr_range(unsigned long pfn, size_t size)
 {
 	return 1;
@@ -702,10 +705,9 @@ void * patch_read_msr(void * CPUInfo)
 	return NULL;
 }
 
-
+#ifdef EFI_NOT_READY
 void print_stat(efi_status_t stat)
 {
-#ifdef EFI_NOT_READY
     switch (stat) {
         case EFI_SUCCESS:
             printk( KERN_DEBUG "EFI_SUCCESS\n");
@@ -747,8 +749,8 @@ void print_stat(efi_status_t stat)
             printk( KERN_DEBUG "Unknown status\n");
             break;
     }
-#endif
 }
+#endif
 
 static long d_ioctl(struct file *file, unsigned int ioctl_num, unsigned long ioctl_param)
 {
@@ -840,7 +842,12 @@ static long d_ioctl(struct file *file, unsigned int ioctl_num, unsigned long ioc
 		printk(KERN_INFO "[chipsec][IOCTL_LOAD_UCODE_UPDATE] Initializing update routine\n");
 
 		/* we just check if the first bytes are in the ok range */
-		if (!access_ok(VERIFY_READ, ioctl_param, sizeof(unsigned short))) {
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,0,0)
+		if (!access_ok(VERIFY_READ, ioctl_param, sizeof(unsigned short))) 
+#else
+		if(!access_ok(ioctl_param,sizeof(unsigned short)))
+#endif	
+		{
 			printk("\n address not in user-mode\n");
 			return -EFAULT;
 		}
